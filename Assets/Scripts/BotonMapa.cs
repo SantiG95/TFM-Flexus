@@ -9,6 +9,7 @@ public class BotonMapa : MonoBehaviour, IPointerDownHandler
     public GameObject habitacion;
     public Sprite botonActivado;
     public Sprite botonDesactivado;
+    public bool activa;
 
     private CamaraController camara;
     private Image sprite;
@@ -19,6 +20,11 @@ public class BotonMapa : MonoBehaviour, IPointerDownHandler
         camara = GameObject.Find("Main Camera").GetComponent<CamaraController>();
         sprite = GetComponent<Image>();
 
+    }
+
+    void Update()
+    {
+        cambiarSprite();
     }
 
     public void OnPointerDown(PointerEventData eventData)
@@ -37,14 +43,27 @@ public class BotonMapa : MonoBehaviour, IPointerDownHandler
         }
     }
 
+    void cambiarSprite()
+    {
+        if (activa)
+        {
+            sprite.sprite = botonActivado;
+        }
+        else
+        {
+            sprite.sprite = botonDesactivado;
+        }
+    }
+
     public void camaraActiva()
     {
         ponerCamarasNoActivas();
-        sprite.sprite = botonActivado;
+        activa = true;
+        
     }
 
     public void camaraNoActiva()
     {
-        sprite.sprite = botonDesactivado;
+        activa = false;
     }
 }

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class FuenteScript : MonoBehaviour
 {
+
     private CocoControl coco;
     public GameObject pato;
     public GameObject sinNombre;
@@ -14,6 +15,7 @@ public class FuenteScript : MonoBehaviour
 
     private SpriteRenderer spriteFuente;
     private GameObject fuenteGameObject;
+    private SpriteHabitaciones cambiaSprite;
 
     public Sprite fuente0;
     public Sprite fuente1;
@@ -30,6 +32,7 @@ public class FuenteScript : MonoBehaviour
 
         spriteFuente = GetComponent<SpriteRenderer>();
         fuenteGameObject = GameObject.Find("Fuente");
+        cambiaSprite = GameObject.Find("Lugares").GetComponent<SpriteHabitaciones>();
     }
 
     // Update is called once per frame
@@ -42,28 +45,37 @@ public class FuenteScript : MonoBehaviour
     {
         if (cocoPresente && patoPresente && sinNombrePresente)
         {
-            if (!coco.activo)
-            {
-                switch (coco.estadoDespertando)
-                {
-                    case 0:
-                        spriteFuente.sprite = fuente0;
-                        break;
+            switch (coco.estado)
+               {
+                case 0:
+                    cambiaSprite.cambiarSprite("Fuente", 0);
+                    break;
 
-                    case 1:
-                        spriteFuente.sprite = fuente1;
-                        break;
+                case 1:
+                    cambiaSprite.cambiarSprite("Fuente", 1);
+                    break;
 
-                    case 2:
-                        spriteFuente.sprite = fuente2;
-                        break;
-                }
-            }
-            else
-            {
-                spriteFuente.sprite = fuente3;
+                case 2:
+                    cambiaSprite.cambiarSprite("Fuente", 2);
+                    break;
+                
+                case 3:
+                    cambiaSprite.cambiarSprite("Fuente", 3);
+                    break;
+
+                case 4:
+                    cambiaSprite.cambiarSprite("Fuente", 4);
+                    break;
+
+                case 5:
+                    cambiaSprite.cambiarSprite("Fuente", 5);
+                    break;
             }
             
+        }
+        else
+        {
+            cambiaSprite.cambiarSprite("Fuente", 0);
         }
     }
 }

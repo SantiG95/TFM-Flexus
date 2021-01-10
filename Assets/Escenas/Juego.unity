@@ -754,6 +754,7 @@ MonoBehaviour:
   habitacion: {fileID: 1179042521}
   botonActivado: {fileID: 21300000, guid: a53293dd06316cd459070a0c1604c0bd, type: 3}
   botonDesactivado: {fileID: 21300000, guid: bef4c366f5678004fa4caedba2d52743, type: 3}
+  activa: 0
 --- !u!1 &515165702
 GameObject:
   m_ObjectHideFlags: 0
@@ -1020,6 +1021,7 @@ MonoBehaviour:
   habitacion: {fileID: 277671186}
   botonActivado: {fileID: 21300000, guid: a53293dd06316cd459070a0c1604c0bd, type: 3}
   botonDesactivado: {fileID: 21300000, guid: bef4c366f5678004fa4caedba2d52743, type: 3}
+  activa: 0
 --- !u!1 &593914401
 GameObject:
   m_ObjectHideFlags: 0
@@ -1192,6 +1194,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 795248524}
+  - component: {fileID: 795248525}
   m_Layer: 0
   m_Name: Lugares
   m_TagString: Untagged
@@ -1220,6 +1223,35 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &795248525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 795248523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75aa91583c83e854abbe98693f4feb15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Fuente:
+  - {fileID: 21300000, guid: a2192cf0524c5fb4eaf9284e9e7d3be8, type: 3}
+  - {fileID: 21300000, guid: 0e6d161dba0dfc84cb3ab21d1d2af14f, type: 3}
+  - {fileID: 21300000, guid: 4bb91b09462f42d43ac7d3eef1d6fda4, type: 3}
+  - {fileID: 21300000, guid: 5f6ff6b4b537ee64babcdd3df898323b, type: 3}
+  - {fileID: 21300000, guid: b58a0604655b1e0429f49c15ea3b370d, type: 3}
+  - {fileID: 21300000, guid: c3f6a80d372bc6c4f931601c974763cd, type: 3}
+  Exterior:
+  - {fileID: 21300000, guid: 906f9e470f9f6014cb880529c6d79b33, type: 3}
+  - {fileID: 21300000, guid: ca25e2cc93b42ae4abfabaadaf29da26, type: 3}
+  - {fileID: 21300000, guid: 0f21568fb49a98c4a8fd3b53f2461c3e, type: 3}
+  Callejon: []
+  Mesas: []
+  Nubes: []
+  Piscina: []
+  Puente: []
+  SalaPrincipal: []
 --- !u!1 &854409861
 GameObject:
   m_ObjectHideFlags: 0
@@ -1574,6 +1606,7 @@ MonoBehaviour:
   habitacion: {fileID: 743803718}
   botonActivado: {fileID: 21300000, guid: a53293dd06316cd459070a0c1604c0bd, type: 3}
   botonDesactivado: {fileID: 21300000, guid: bef4c366f5678004fa4caedba2d52743, type: 3}
+  activa: 0
 --- !u!1 &1381129121
 GameObject:
   m_ObjectHideFlags: 0
@@ -1760,7 +1793,6 @@ GameObject:
   - component: {fileID: 1545896473}
   - component: {fileID: 1545896470}
   - component: {fileID: 1545896471}
-  - component: {fileID: 1545896474}
   m_Layer: 5
   m_Name: Boton2
   m_TagString: Untagged
@@ -1863,19 +1895,7 @@ MonoBehaviour:
   habitacion: {fileID: 260786911}
   botonActivado: {fileID: 21300000, guid: a53293dd06316cd459070a0c1604c0bd, type: 3}
   botonDesactivado: {fileID: 21300000, guid: bef4c366f5678004fa4caedba2d52743, type: 3}
---- !u!114 &1545896474
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1545896468}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31b98a04bef20fb46a9453b6500e4aaa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  botonMapa: {fileID: 1545896473}
+  activa: 1
 --- !u!1 &1574324492 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7851364613147434627, guid: 113d0bd49b03c614aa9f2b3cba4b5ebc,
@@ -1979,7 +1999,7 @@ PrefabInstance:
     - target: {fileID: 7851364613147434627, guid: 113d0bd49b03c614aa9f2b3cba4b5ebc,
         type: 3}
       propertyPath: m_Name
-      value: Exterior1
+      value: Exterior
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 113d0bd49b03c614aa9f2b3cba4b5ebc, type: 3}
@@ -2084,6 +2104,66 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 113d0bd49b03c614aa9f2b3cba4b5ebc, type: 3}
+--- !u!1 &1673515506
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1673515507}
+  - component: {fileID: 1673515508}
+  m_Layer: 0
+  m_Name: Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1673515507
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1673515506}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.7401413, y: -10.687771, z: 4.245871}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1673515508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1673515506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75aa91583c83e854abbe98693f4feb15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Fuente:
+  - {fileID: 21300000, guid: a2192cf0524c5fb4eaf9284e9e7d3be8, type: 3}
+  - {fileID: 21300000, guid: 0e6d161dba0dfc84cb3ab21d1d2af14f, type: 3}
+  - {fileID: 21300000, guid: 4bb91b09462f42d43ac7d3eef1d6fda4, type: 3}
+  - {fileID: 21300000, guid: 5f6ff6b4b537ee64babcdd3df898323b, type: 3}
+  - {fileID: 21300000, guid: b58a0604655b1e0429f49c15ea3b370d, type: 3}
+  - {fileID: 21300000, guid: c3f6a80d372bc6c4f931601c974763cd, type: 3}
+  Exterior:
+  - {fileID: 21300000, guid: 906f9e470f9f6014cb880529c6d79b33, type: 3}
+  - {fileID: 21300000, guid: ca25e2cc93b42ae4abfabaadaf29da26, type: 3}
+  - {fileID: 21300000, guid: 0f21568fb49a98c4a8fd3b53f2461c3e, type: 3}
+  Callejon: []
+  Mesas: []
+  Nubes: []
+  Piscina: []
+  Puente: []
+  SalaPrincipal: []
 --- !u!1 &1692659230 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7851364613147434627, guid: 113d0bd49b03c614aa9f2b3cba4b5ebc,
@@ -2205,6 +2285,7 @@ MonoBehaviour:
   habitacion: {fileID: 198462521}
   botonActivado: {fileID: 21300000, guid: a53293dd06316cd459070a0c1604c0bd, type: 3}
   botonDesactivado: {fileID: 21300000, guid: bef4c366f5678004fa4caedba2d52743, type: 3}
+  activa: 0
 --- !u!1 &1954848493
 GameObject:
   m_ObjectHideFlags: 0
@@ -2451,6 +2532,7 @@ MonoBehaviour:
   habitacion: {fileID: 1574324492}
   botonActivado: {fileID: 21300000, guid: a53293dd06316cd459070a0c1604c0bd, type: 3}
   botonDesactivado: {fileID: 21300000, guid: bef4c366f5678004fa4caedba2d52743, type: 3}
+  activa: 0
 --- !u!1 &2018574912
 GameObject:
   m_ObjectHideFlags: 0
@@ -2495,10 +2577,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   contador: 0
-  estadoDespertando: 0
+  estado: 0
   activo: 0
   habitacionActual: {fileID: 743803718}
   habitacionCamara: {fileID: 0}
+  destinoActual: {fileID: 0}
 --- !u!1 &2100454022
 GameObject:
   m_ObjectHideFlags: 0
@@ -2614,6 +2697,7 @@ MonoBehaviour:
   habitacion: {fileID: 1692659230}
   botonActivado: {fileID: 21300000, guid: a53293dd06316cd459070a0c1604c0bd, type: 3}
   botonDesactivado: {fileID: 21300000, guid: bef4c366f5678004fa4caedba2d52743, type: 3}
+  activa: 0
 --- !u!1 &2107320747 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7851364613147434627, guid: 113d0bd49b03c614aa9f2b3cba4b5ebc,

@@ -69,6 +69,7 @@
     <Compile Include="Assets\Scripts\CartaControl.cs" />
     <Compile Include="Assets\Scripts\Enemigos\CocoControl.cs" />
     <Compile Include="Assets\Scripts\Habitaciones\FuenteScript.cs" />
+    <Compile Include="Assets\Scripts\Habitaciones\SpriteHabitaciones.cs" />
     <Compile Include="Assets\Scripts\MoverCamaraDerecha.cs" />
     <Compile Include="Assets\Scripts\MoverCamaraIzquierda.cs" />
     <Compile Include="Assets\Scripts\PrimeraCamara.cs" />
