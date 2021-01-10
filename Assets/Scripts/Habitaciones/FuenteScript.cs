@@ -9,20 +9,9 @@ public class FuenteScript : MonoBehaviour
     public GameObject pato;
     public GameObject sinNombre;
 
-    public bool cocoPresente = true;
-    public bool patoPresente = true;
-    public bool sinNombrePresente = true;
-
-    private SpriteRenderer spriteFuente;
-    private GameObject fuenteGameObject;
     private SpriteHabitaciones cambiaSprite;
+    private PresenciaEnemigos presenciaEnemigos;
 
-    public Sprite fuente0;
-    public Sprite fuente1;
-    public Sprite fuente2;
-    public Sprite fuente3;
-    public Sprite fuente4;
-    public Sprite fuente5;
 
 
     // Start is called before the first frame update
@@ -30,9 +19,9 @@ public class FuenteScript : MonoBehaviour
     {
         coco = GameObject.Find("Coco").GetComponent<CocoControl>();
 
-        spriteFuente = GetComponent<SpriteRenderer>();
-        fuenteGameObject = GameObject.Find("Fuente");
+        presenciaEnemigos = GetComponent<PresenciaEnemigos>();
         cambiaSprite = GameObject.Find("Lugares").GetComponent<SpriteHabitaciones>();
+
     }
 
     // Update is called once per frame
@@ -43,7 +32,7 @@ public class FuenteScript : MonoBehaviour
 
     void detectarEnemigos()
     {
-        if (cocoPresente && patoPresente && sinNombrePresente)
+        if (presenciaEnemigos.cocoPresente && presenciaEnemigos.patoPresente && presenciaEnemigos.sinNombrePresente)
         {
             switch (coco.estado)
                {

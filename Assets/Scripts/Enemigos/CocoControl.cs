@@ -37,6 +37,7 @@ public class CocoControl : MonoBehaviour
             moverse();
             if (llegoDestino())
             {
+                Debug.Log("cambio destino");
                 elegirDestino();
             }
         }
@@ -86,36 +87,110 @@ public class CocoControl : MonoBehaviour
     void moverse()
     {
         //TODO tiempo desicion random
-        if(contador > 5)
+        if(contador > 5 && darUnPaso())
         {
-            switch (habitacionActual.name)
+            if (darUnPaso())
             {
-                case "Fuente":
-                    switch (estado)
-                    {
-                        case 3:
-                            if (destinoActual.name == "Exterior")
-                            {
-                                estado = 5;
-                            }
-                            else
-                            {
-                                estado = 4;
-                            }
-                            break;
+                switch (habitacionActual.name)
+                {
+                    case "Fuente":
+                        switch (estado)
+                        {
+                            case 3:
+                                if (destinoActual.name == "Exterior")
+                                {
+                                    estado = 5;
+                                }
+                                else
+                                {
+                                    estado = 4;
+                                }
+                                break;
 
-                        case 4:
-                        case 5:
-                            habitacionActual.GetComponent<FuenteScript>().cocoPresente = false;
-                            habitacionActual = destinoActual;
-                            //habitacionActual.GetComponent<FuenteScript>().cocoPresente = true;
-                            break;
-                    }
-                    break;
+                            case 4:
+                                cambioHabitacion();
+                                estado = 0;
+                                break;
+
+                            case 5:
+                                cambioHabitacion();
+
+                                if (Random.Range(0,100) < 50)
+                                {
+                                    estado = 0;
+                                }
+                                else
+                                {
+                                    estado = 1;
+                                }
+                                Debug.Log("Estado actual: " + estado);
+                                break;
+                        }
+                        break;
+
+                    case "Exterior":
+                        switch (estado)
+                        {
+                            case 0:
+                                if (Random.Range(0,100) < 20)
+                                {
+                                    estado = 1;
+                                }
+                                else
+                                {
+                                    cambioHabitacion();
+                                    estado = 3;
+                                }
+                                break;
+
+                            case 1:
+                                if (Random.Range(0, 100) < 50)
+                                {
+                                    estado = 0;
+                                }
+                                else
+                                {
+                                    cambioHabitacion();
+                                    estado = 3;
+                                }
+                            
+                                break;
+                        }
+                        break;
+
+                    case "Callejon":
+                        switch (estado)
+                        {
+                            case 0:
+                                if (destinoActual.name == "Fuente")
+                                {
+                                    cambioHabitacion();
+                                    estado = 3;
+                                }
+                                else
+                                {
+                                    estado = 1;
+                                }
+                                break;
+
+                            case 1:
+                                cambioHabitacion();
+                                estado = 0;
+                                break;
+                        }
+                        break;
+
+
+                }
             }
             contador = 0;
         }
         
+    }
+
+    bool darUnPaso()
+    {
+        return Random.Range(0, 100) < 50;
     }
 
     void elegirDestino()
@@ -137,6 +212,28 @@ public class CocoControl : MonoBehaviour
             case "Exterior":
                 destinoActual = GameObject.Find("Fuente");
                 break;
+
+            case "Callejon":
+                if (eligeRandom < 70)
+                {
+                    destinoActual = GameObject.Find("Mesas");
+                }
+                else
+                {
+                    destinoActual = GameObject.Find("Fuente");
+                }
+                break;
+
+            case "Mesas":
+                destinoActual = GameObject.Find("Sala Principal");
+                break;
         }
+    }
+
+    void cambioHabitacion()
+    {
+        habitacionActual.GetComponent<PresenciaEnemigos>().cocoPresente = false;
+        habitacionActual = destinoActual;
+        habitacionActual.GetComponent<PresenciaEnemigos>().cocoPresente = true;
     }
 }

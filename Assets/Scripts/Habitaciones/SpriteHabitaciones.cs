@@ -24,6 +24,10 @@ public class SpriteHabitaciones : MonoBehaviour
             case "Exterior":
                 GameObject.Find("Exterior").GetComponent<SpriteRenderer>().sprite = Exterior[numeroLista];
                 break;
+
+            case "Callejon":
+                GameObject.Find("Callejon").GetComponent<SpriteRenderer>().sprite = Callejon[numeroLista];
+                break;
         }
     }
 }
