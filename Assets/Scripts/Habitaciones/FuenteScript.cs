@@ -12,8 +12,6 @@ public class FuenteScript : MonoBehaviour
     private SpriteHabitaciones cambiaSprite;
     private PresenciaEnemigos presenciaEnemigos;
 
-
-
     // Start is called before the first frame update
     void Start()
     {

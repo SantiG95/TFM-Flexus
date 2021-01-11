@@ -65,8 +65,16 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\BotonIniciar.cs" />
     <Compile Include="Assets\Scripts\BotonMapa.cs" />
-    <Compile Include="Assets\Scripts\CamaraController.cs" />
+    <Compile Include="Assets\Scripts\CamaraScripts\BordeDerechoScript.cs" />
+    <Compile Include="Assets\Scripts\CamaraScripts\BordeIzquierdoScript.cs" />
+    <Compile Include="Assets\Scripts\CamaraScripts\CamaraController.cs" />
+    <Compile Include="Assets\Scripts\CamaraScripts\LimitesCamara.cs" />
+    <Compile Include="Assets\Scripts\CamaraScripts\MoverCamaraDerecha.cs" />
+    <Compile Include="Assets\Scripts\CamaraScripts\MoverCamaraIzquierda.cs" />
     <Compile Include="Assets\Scripts\CartaControl.cs" />
+    <Compile Include="Assets\Scripts\ElementosScripts\ChapaController.cs" />
+    <Compile Include="Assets\Scripts\ElementosScripts\ElementosSprite.cs" />
+    <Compile Include="Assets\Scripts\ElementosScripts\PuertaController.cs" />
     <Compile Include="Assets\Scripts\Enemigos\CocoControl.cs" />
     <Compile Include="Assets\Scripts\Habitaciones\CallejonScript.cs" />
     <Compile Include="Assets\Scripts\Habitaciones\ExteriorScript.cs" />
@@ -74,8 +82,6 @@
     <Compile Include="Assets\Scripts\Habitaciones\MesasScript.cs" />
     <Compile Include="Assets\Scripts\Habitaciones\PresenciaEnemigos.cs" />
     <Compile Include="Assets\Scripts\Habitaciones\SpriteHabitaciones.cs" />
-    <Compile Include="Assets\Scripts\MoverCamaraDerecha.cs" />
-    <Compile Include="Assets\Scripts\MoverCamaraIzquierda.cs" />
     <Compile Include="Assets\Scripts\PrimeraCamara.cs" />
     <Compile Include="Assets\Scripts\Titulo.cs" />
     <Compile Include="Assets\Scripts\tituloFondo.cs" />

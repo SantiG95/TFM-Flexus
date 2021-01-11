@@ -6,13 +6,14 @@ public class MoverCamaraDerecha : MonoBehaviour
 {
     public GameObject camara;
     public float velocidad = 5;
+    public GameObject bordeDerecho;
 
     // Limite
-    public float limiteDerecho = 2.21f;
+    public float limiteDerecho = 11.1f;
     
     private void OnMouseOver()
     {
-        if (camara.transform.position.x < limiteDerecho)
+        if (bordeDerecho.transform.position.x < limiteDerecho)
         {
             camara.transform.Translate(Vector3.right * velocidad * Time.deltaTime);
         }

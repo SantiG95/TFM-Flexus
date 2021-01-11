@@ -81,6 +81,7 @@ public class CocoControl : MonoBehaviour
         {
             contador += Time.deltaTime;
         }
+
         
     }
 
@@ -171,6 +172,20 @@ public class CocoControl : MonoBehaviour
                                 {
                                     estado = 1;
                                 }
+                                break;
+
+                            case 1:
+                                cambioHabitacion();
+                                estado = 0;
+                                break;
+                        }
+                        break;
+
+                    case "Mesas":
+                        switch (estado)
+                        {
+                            case 0:
+                                estado = 1;
                                 break;
 
                             case 1:

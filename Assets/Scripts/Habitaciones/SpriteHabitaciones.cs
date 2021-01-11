@@ -28,6 +28,10 @@ public class SpriteHabitaciones : MonoBehaviour
             case "Callejon":
                 GameObject.Find("Callejon").GetComponent<SpriteRenderer>().sprite = Callejon[numeroLista];
                 break;
+
+            case "Mesas":
+                GameObject.Find("Mesas").GetComponent<SpriteRenderer>().sprite = Mesas[numeroLista];
+                break;
         }
     }
 }

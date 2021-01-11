@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CamaraController : MonoBehaviour
 {
+    public Camera camara;
+
     public GameObject camaraActual;
     public GameObject camaraGuardada;
 
@@ -13,11 +15,20 @@ public class CamaraController : MonoBehaviour
     private GameObject botonesCamaraPrincipal;
     public GameObject UI;
 
+    private GameObject bordeDerecho;
+    private GameObject bordeIzquierdo;
+    public float velocidadPaneo = 3;
+
+
     // Start is called before the first frame update
     void Start()
     {
         botonesCamaraPrincipal = GameObject.Find("Botones Camara Principal");
         ultimaPosicion = GameObject.Find("Mesas").gameObject.transform.position;
+
+        bordeDerecho = GameObject.Find("BordeDerecho");
+        bordeIzquierdo = GameObject.Find("BordeIzquierdo");
+
     }
 
     // Update is called once per frame
@@ -27,6 +38,8 @@ public class CamaraController : MonoBehaviour
         {
             cambiarModo();
         }
+        paneoHabitacion();
+
     }
 
     void cambiarModo()
@@ -63,5 +76,20 @@ public class CamaraController : MonoBehaviour
     public void cambiarUbicacion(Vector3 ubicacion)
     {
         transform.position = ubicacion + new Vector3(0, 0, -10);
+    }
+
+    void paneoHabitacion()
+    {
+        if (camaraActual.name != "Sala Principal")
+        {
+            Camera.main.transform.Translate(Vector3.right * velocidadPaneo * Time.deltaTime);
+
+            if (bordeDerecho.transform.position.x >= camaraActual.GetComponent<LimitesCamara>().limiteDerecha ||
+                bordeIzquierdo.transform.position.x <= camaraActual.GetComponent<LimitesCamara>().limiteIzquierda)
+            {
+                velocidadPaneo *= -1;
+            }
+
+        }
     }
 }
