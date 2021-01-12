@@ -10,12 +10,16 @@ public class GameManager : MonoBehaviour
     public GameObject botonesMapa;
     public List<GameObject> listaEnemigos;
     public GameObject Camara;
+    public PuertaController puerta;
+    public ChapaController chapa;
     public GameObject finDelJuegoTexto;
     public bool juegoContinua = true;
     public int tiempoFinal = 540;
 
-    public float tiempo = 0;
+    public float contador = 0;
+    public int tiempo = 0;
     public float cansancio = 100;
+    public float tiempoDescuento = 9.6f;
 
     public float contadorReset = 0;
 
@@ -23,29 +27,41 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(contarEnergia());
+        puerta = GameObject.Find("Puerta").GetComponent<PuertaController>();
+        chapa = GameObject.Find("Chapa").GetComponent<ChapaController>();
+
         StartCoroutine(contarTiempo());
     }
 
     // Update is called once per frame
     void Update()
     {
-        contarTiempo();
+        contarEnergia();
+        if (juegoContinua)
+        {
+            actualizarConsumo();
+            sinEnergia();
+        }
         controlarTiempo();
     }
 
-    IEnumerator contarEnergia()
+    public void contarEnergia()
     {
-        while (juegoContinua)
+        if (juegoContinua)
         {
-            yield return new WaitForSeconds(9.6f);
-            cansancio -= 1;
+            contador += Time.deltaTime;
+            if(contador >= tiempoDescuento)
+            {
+                cansancio -= 1;
+                contador = 0;
+            }
+            
         }
     }
 
     IEnumerator contarTiempo()
     {
-        while (juegoContinua)
+        while (true)
         {
             yield return new WaitForSeconds(1);
             tiempo++;
@@ -82,6 +98,42 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("Titulo");
     }
 
-    
+    void actualizarConsumo()
+    {
+        float nuevoTiempoDescuento = 9.6f;
+        if (!puerta.puertaAbierta)
+        {
+            nuevoTiempoDescuento /= 2;
+        }
+        if (!chapa.puertaAbierta)
+        {
+            nuevoTiempoDescuento /= 2;
+        }
+        if (Camara.GetComponent<CamaraController>().camaraActual.name != "Sala Principal")
+        {
+            nuevoTiempoDescuento /= 2;
+        }
+        tiempoDescuento = nuevoTiempoDescuento;
+    }
+
+    void sinEnergia()
+    {
+        if(cansancio == 0)
+        {
+            juegoContinua = false;
+            Camara.GetComponent<CamaraController>().sinEnergia();
+            if (!puerta.puertaAbierta)
+            {
+                puerta.cambiarSprite();
+            }
+            if (!chapa.puertaAbierta)
+            {
+                chapa.cambiarSprite();
+            }
+        }
+    }
+
+
+
 
 }

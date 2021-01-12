@@ -20,14 +20,11 @@ public class CocoControl : MonoBehaviour
     public bool juegoActivo = true;
 
 
-    // Start is called before the first frame update
     void Start()
     {
-        //StartCoroutine(cambiarEtapaDespertar());
         elegirDestino();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (juegoActivo)
@@ -128,7 +125,6 @@ public class CocoControl : MonoBehaviour
                                 {
                                     cambioHabitacion(1);
                                 }
-                                Debug.Log("Estado actual: " + estado);
                                 break;
                         }
                         break;
@@ -199,7 +195,6 @@ public class CocoControl : MonoBehaviour
                         {
                             //TODO matar y terminar el juego
                             GameObject.Find("Manager").GetComponent<GameManager>().lanzarFinal(true);
-                            Debug.Log("GAME OVER!!");
                         }
                         else
                         {
@@ -282,10 +277,5 @@ public class CocoControl : MonoBehaviour
         habitacionActual = destinoActual;
         habitacionActual.GetComponent<PresenciaEnemigos>().cocoPresente = true;
         estado = estadoNuevo;
-    }
-
-    void lanzarFinDelJuego()
-    {
-        
     }
 }

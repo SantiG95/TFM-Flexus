@@ -7,6 +7,7 @@ public class ChapaController : MonoBehaviour
     public bool puertaAbierta = true;
 
     private Animator animatorChapa;
+    private bool juegoContinua;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,15 +18,23 @@ public class ChapaController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        juegoContinua = GameObject.Find("Manager").GetComponent<GameManager>().juegoContinua;
     }
 
     private void OnMouseDown()
     {
+        if (juegoContinua)
+        {
+            cambiarSprite();
+        }
+    }
+
+    public void cambiarSprite()
+    {
         if (puertaAbierta)
         {
             animatorChapa.SetTrigger("Moviendo");
-            
+
             puertaAbierta = false;
             animatorChapa.SetBool("Abierto", false);
         }
@@ -35,6 +44,5 @@ public class ChapaController : MonoBehaviour
             animatorChapa.SetBool("Abierto", true);
             puertaAbierta = true;
         }
-        
     }
 }

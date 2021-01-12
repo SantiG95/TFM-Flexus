@@ -14,7 +14,7 @@ public class CamaraController : MonoBehaviour
     public bool mirandoCamaras = false;
 
     private GameObject botonesCamaraPrincipal;
-    public GameObject UI;
+    public GameObject mapa;
 
     private GameObject bordeDerecho;
     private GameObject bordeIzquierdo;
@@ -28,8 +28,6 @@ public class CamaraController : MonoBehaviour
 
         bordeDerecho = GameObject.Find("BordeDerecho");
         bordeIzquierdo = GameObject.Find("BordeIzquierdo");
-
-        //StartCoroutine(terminarJuego());
 
     }
 
@@ -81,7 +79,7 @@ public class CamaraController : MonoBehaviour
     void cambiarBotones()
     {
         botonesCamaraPrincipal.SetActive(!mirandoCamaras);
-        UI.SetActive(mirandoCamaras);
+        mapa.SetActive(mirandoCamaras);
     }
 
     public void cambiarUbicacion(Vector3 ubicacion)
@@ -95,12 +93,21 @@ public class CamaraController : MonoBehaviour
         {
             Camera.main.transform.Translate(Vector3.right * velocidadPaneo * Time.deltaTime);
 
-            if (bordeDerecho.transform.position.x >= camaraActual.GetComponent<LimitesCamara>().limiteDerecha ||
-                bordeIzquierdo.transform.position.x <= camaraActual.GetComponent<LimitesCamara>().limiteIzquierda)
+            if (bordeDerecho.transform.position.x > camaraActual.GetComponent<LimitesCamara>().limiteDerecha ||
+                bordeIzquierdo.transform.position.x < camaraActual.GetComponent<LimitesCamara>().limiteIzquierda)
             {
                 velocidadPaneo *= -1;
             }
 
+        }
+    }
+
+    public void sinEnergia()
+    {
+        juegoContinua = false;
+        if (camaraActual.name != "Sala Principal")
+        {
+            cambiarModo();
         }
     }
 }

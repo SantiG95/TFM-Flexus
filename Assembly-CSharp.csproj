@@ -64,10 +64,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\BotonIniciar.cs" />
-    <Compile Include="Assets\Scripts\BotonMapa.cs" />
     <Compile Include="Assets\Scripts\BotonSalir.cs" />
     <Compile Include="Assets\Scripts\CamaraScripts\BordeDerechoScript.cs" />
     <Compile Include="Assets\Scripts\CamaraScripts\BordeIzquierdoScript.cs" />
+    <Compile Include="Assets\Scripts\CamaraScripts\BotonMapa.cs" />
     <Compile Include="Assets\Scripts\CamaraScripts\CamaraController.cs" />
     <Compile Include="Assets\Scripts\CamaraScripts\LimitesCamara.cs" />
     <Compile Include="Assets\Scripts\CamaraScripts\MoverCamaraDerecha.cs" />
@@ -76,6 +76,7 @@
     <Compile Include="Assets\Scripts\ElementosScripts\ChapaController.cs" />
     <Compile Include="Assets\Scripts\ElementosScripts\PuertaController.cs" />
     <Compile Include="Assets\Scripts\Enemigos\CocoControl.cs" />
+    <Compile Include="Assets\Scripts\EnergiaIndicador.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\Habitaciones\CallejonScript.cs" />
     <Compile Include="Assets\Scripts\Habitaciones\ExteriorScript.cs" />

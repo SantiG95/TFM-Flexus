@@ -13,6 +13,8 @@ public class PuertaController : MonoBehaviour
     public bool puertaAbierta = true;
     public GameObject habitacionCamara;
 
+    private bool juegoContinua;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,10 +27,34 @@ public class PuertaController : MonoBehaviour
     void Update()
     {
         habitacionCamara = GameObject.Find("Main Camera").GetComponent<CamaraController>().camaraActual;
+        juegoContinua = GameObject.Find("Manager").GetComponent<GameManager>().juegoContinua;
+
         actualizarImagenEnemigos();
     }
 
     private void OnMouseDown()
+    {
+        if (juegoContinua)
+        {
+            cambiarSprite();
+        }
+    }
+
+    public void cambiarSprite(int numeroLista)
+    {
+
+        spritePuerta.sprite = listaSprites[numeroLista];
+    }
+
+    void actualizarImagenEnemigos()
+    {
+        if (enemigosPresentes.cocoPresente && (habitacionCamara.name != "Sala Principal" || !juegoContinua))
+        {
+            cambiarSprite(2);
+        }
+    }
+
+    public void cambiarSprite()
     {
         if (puertaAbierta)
         {
@@ -46,21 +72,6 @@ public class PuertaController : MonoBehaviour
                 cambiarSprite(0);
             }
             puertaAbierta = true;
-        }
-        
-    }
-
-    public void cambiarSprite(int numeroLista)
-    {
-
-        spritePuerta.sprite = listaSprites[numeroLista];
-    }
-
-    void actualizarImagenEnemigos()
-    {
-        if (enemigosPresentes.cocoPresente && habitacionCamara.name != "Sala Principal")
-        {
-            cambiarSprite(2);
         }
     }
 
