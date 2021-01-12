@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class FuenteScript : MonoBehaviour
 {
-
     private CocoControl coco;
     public GameObject pato;
     public GameObject sinNombre;
@@ -17,9 +16,8 @@ public class FuenteScript : MonoBehaviour
     {
         coco = GameObject.Find("Coco").GetComponent<CocoControl>();
 
-        presenciaEnemigos = GetComponent<PresenciaEnemigos>();
         cambiaSprite = GameObject.Find("Lugares").GetComponent<SpriteHabitaciones>();
-
+        presenciaEnemigos = GetComponent<PresenciaEnemigos>();
     }
 
     // Update is called once per frame

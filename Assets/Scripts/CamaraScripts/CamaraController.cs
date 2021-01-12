@@ -5,6 +5,7 @@ using UnityEngine;
 public class CamaraController : MonoBehaviour
 {
     public Camera camara;
+    public bool juegoContinua = true;
 
     public GameObject camaraActual;
     public GameObject camaraGuardada;
@@ -19,7 +20,6 @@ public class CamaraController : MonoBehaviour
     private GameObject bordeIzquierdo;
     public float velocidadPaneo = 3;
 
-
     // Start is called before the first frame update
     void Start()
     {
@@ -29,16 +29,27 @@ public class CamaraController : MonoBehaviour
         bordeDerecho = GameObject.Find("BordeDerecho");
         bordeIzquierdo = GameObject.Find("BordeIzquierdo");
 
+        //StartCoroutine(terminarJuego());
+
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            cambiarModo();
+            Application.Quit();
         }
-        paneoHabitacion();
+
+        else if (juegoContinua)
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                cambiarModo();
+            }
+            paneoHabitacion();
+        }
+       
 
     }
 

@@ -14,6 +14,11 @@ public class CocoControl : MonoBehaviour
 
     public GameObject destinoActual;
 
+    public bool puertaAbierta;
+    public int quieroMoverme = 0;
+
+    public bool juegoActivo = true;
+
 
     // Start is called before the first frame update
     void Start()
@@ -25,23 +30,25 @@ public class CocoControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        verHabitacionMiraCamara();
-        cuentaTiempo();
+        if (juegoActivo)
+        {
+            verHabitacionMiraCamara();
+            cuentaTiempo();
+            puertaAbierta = GameObject.Find("Puerta").GetComponent<PuertaController>().puertaAbierta;
 
-        if (!activo)
-        {
-            cambiarEtapaDespertar();
-        }
-        else
-        {
-            moverse();
-            if (llegoDestino())
+            if (!activo)
             {
-                Debug.Log("cambio destino");
-                elegirDestino();
+                cambiarEtapaDespertar();
+            }
+            else
+            {
+                moverse();
+                if (llegoDestino())
+                {
+                    elegirDestino();
+                }
             }
         }
-        
     }
 
     private bool llegoDestino()
@@ -77,7 +84,7 @@ public class CocoControl : MonoBehaviour
 
     void cuentaTiempo()
     {
-        if(habitacionCamara != habitacionActual)
+        if(habitacionCamara != habitacionActual || habitacionActual.name == "Sala Principal")
         {
             contador += Time.deltaTime;
         }
@@ -109,20 +116,17 @@ public class CocoControl : MonoBehaviour
                                 break;
 
                             case 4:
-                                cambioHabitacion();
-                                estado = 0;
+                                cambioHabitacion(0);
                                 break;
 
                             case 5:
-                                cambioHabitacion();
-
                                 if (Random.Range(0,100) < 50)
                                 {
-                                    estado = 0;
+                                    cambioHabitacion(0);
                                 }
                                 else
                                 {
-                                    estado = 1;
+                                    cambioHabitacion(1);
                                 }
                                 Debug.Log("Estado actual: " + estado);
                                 break;
@@ -139,8 +143,7 @@ public class CocoControl : MonoBehaviour
                                 }
                                 else
                                 {
-                                    cambioHabitacion();
-                                    estado = 3;
+                                    cambioHabitacion(3);
                                 }
                                 break;
 
@@ -151,8 +154,7 @@ public class CocoControl : MonoBehaviour
                                 }
                                 else
                                 {
-                                    cambioHabitacion();
-                                    estado = 3;
+                                    cambioHabitacion(3);
                                 }
                             
                                 break;
@@ -165,8 +167,7 @@ public class CocoControl : MonoBehaviour
                             case 0:
                                 if (destinoActual.name == "Fuente")
                                 {
-                                    cambioHabitacion();
-                                    estado = 3;
+                                    cambioHabitacion(3);
                                 }
                                 else
                                 {
@@ -175,8 +176,7 @@ public class CocoControl : MonoBehaviour
                                 break;
 
                             case 1:
-                                cambioHabitacion();
-                                estado = 0;
+                                cambioHabitacion(0);
                                 break;
                         }
                         break;
@@ -189,9 +189,29 @@ public class CocoControl : MonoBehaviour
                                 break;
 
                             case 1:
-                                cambioHabitacion();
-                                estado = 0;
+                                cambioHabitacion(0);
                                 break;
+                        }
+                        break;
+
+                    case "Sala Principal":
+                        if (puertaAbierta)
+                        {
+                            //TODO matar y terminar el juego
+                            GameObject.Find("Manager").GetComponent<GameManager>().lanzarFinal(true);
+                            Debug.Log("GAME OVER!!");
+                        }
+                        else
+                        {
+                            if (destinoActual.name == "Fuente")
+                            {
+                                cambioHabitacion(3);
+                            }
+                            else
+                            {
+                                cambioHabitacion(0);
+
+                            }
                         }
                         break;
 
@@ -242,13 +262,30 @@ public class CocoControl : MonoBehaviour
             case "Mesas":
                 destinoActual = GameObject.Find("Sala Principal");
                 break;
+
+            case "Sala Principal":
+                if (eligeRandom < 50)
+                {
+                    destinoActual = GameObject.Find("Fuente");
+                }
+                else
+                {
+                    destinoActual = GameObject.Find("Callejon");
+                }
+                break;
         }
     }
 
-    void cambioHabitacion()
+    void cambioHabitacion(int estadoNuevo)
     {
         habitacionActual.GetComponent<PresenciaEnemigos>().cocoPresente = false;
         habitacionActual = destinoActual;
         habitacionActual.GetComponent<PresenciaEnemigos>().cocoPresente = true;
+        estado = estadoNuevo;
+    }
+
+    void lanzarFinDelJuego()
+    {
+        
     }
 }

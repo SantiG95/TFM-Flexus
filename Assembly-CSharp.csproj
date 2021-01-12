@@ -65,6 +65,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\BotonIniciar.cs" />
     <Compile Include="Assets\Scripts\BotonMapa.cs" />
+    <Compile Include="Assets\Scripts\BotonSalir.cs" />
     <Compile Include="Assets\Scripts\CamaraScripts\BordeDerechoScript.cs" />
     <Compile Include="Assets\Scripts\CamaraScripts\BordeIzquierdoScript.cs" />
     <Compile Include="Assets\Scripts\CamaraScripts\CamaraController.cs" />
@@ -73,18 +74,37 @@
     <Compile Include="Assets\Scripts\CamaraScripts\MoverCamaraIzquierda.cs" />
     <Compile Include="Assets\Scripts\CartaControl.cs" />
     <Compile Include="Assets\Scripts\ElementosScripts\ChapaController.cs" />
-    <Compile Include="Assets\Scripts\ElementosScripts\ElementosSprite.cs" />
     <Compile Include="Assets\Scripts\ElementosScripts\PuertaController.cs" />
     <Compile Include="Assets\Scripts\Enemigos\CocoControl.cs" />
+    <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\Habitaciones\CallejonScript.cs" />
     <Compile Include="Assets\Scripts\Habitaciones\ExteriorScript.cs" />
     <Compile Include="Assets\Scripts\Habitaciones\FuenteScript.cs" />
     <Compile Include="Assets\Scripts\Habitaciones\MesasScript.cs" />
     <Compile Include="Assets\Scripts\Habitaciones\PresenciaEnemigos.cs" />
+    <Compile Include="Assets\Scripts\Habitaciones\SalaPrincipalScript.cs" />
     <Compile Include="Assets\Scripts\Habitaciones\SpriteHabitaciones.cs" />
     <Compile Include="Assets\Scripts\PrimeraCamara.cs" />
     <Compile Include="Assets\Scripts\Titulo.cs" />
     <Compile Include="Assets\Scripts\tituloFondo.cs" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
+    <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Masking.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Mobile.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF Overlay.shader" />
+    <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Surface.cginc" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Sprite.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface.shader" />
     <Reference Include="UnityEngine.Purchasing">
       <HintPath>C:/Users/santi/Documents/Proyectos Unity/Proyecto Skitty/Library/ScriptAssemblies/UnityEngine.Purchasing.dll</HintPath>
     </Reference>
