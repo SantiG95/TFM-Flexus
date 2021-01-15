@@ -19,7 +19,7 @@ e1bbf0ab858085e38fae6b12ebbdcd35 UnityEngine.Timeline.dll:UnityEngine.Timeline.C
 e1bbf0ab858085e38fae6b12ebbdcd35 UnityEngine.Timeline.dll:UnityEngine.Timeline.GroupTrack
 e1bbf0ab858085e38fae6b12ebbdcd35 UnityEngine.Timeline.dll:UnityEngine.Timeline.PlayableTrack
 201e3fde670b00545944bb3db215c80a UnityEngine.Timeline.dll:UnityEngine.Timeline.TimelineAsset
-134d4a31962a6433133a6416916c49ed Assembly-CSharp.dll:.GameManager
+a90b334d72fb6b694f549691bd3a1a2d Assembly-CSharp.dll:.GameManager
 e7a73f5f78ba6445195ec23b74a1ce2d Unity.TextMeshPro.dll:TMPro.TMP_ScrollbarEventHandler
 cf9f5cf2c3145a37ac07f00e50e460f9 UnityEngine.UI.dll:UnityEngine.UI.AspectRatioFitter
 71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.UI.dll:UnityEngine.EventSystems.BaseInput
@@ -128,9 +128,10 @@ b8a5e8091ab0b8861d2add371082c5e0 Unity.TextMeshPro.dll:TMPro.TMP_SpriteAsset
 b3ab2106268377ffe25dd18ac23dca28 Unity.TextMeshPro.dll:TMPro.TMP_Asset
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.BotonSalir
 71bb6a6b6c8f052f948db64c7dd3ca4f Unity.TextMeshPro.dll:TMPro.TMP_SpriteAnimator
-7c3ed7f431d6efe2c859aeb71ac954ee Assembly-CSharp.dll:.CamaraController
+a730cd42e5be873a7caf13505625cd83 Assembly-CSharp.dll:.CamaraController
 5daae957e46dc29048e748fe60667c67 Assembly-CSharp.dll:.SpriteHabitaciones
 4fd8bf02e3089425d3502e26c44ba31a Unity.TextMeshPro.dll:TMPro.TextContainer
+8e5fe96563baf582d41a56c71d91c5ab Assembly-CSharp.dll:.EnergiaIndicador
 ac1a8b0e0417244bbbebb32427302946 Assembly-CSharp.dll:.CocoControl
 54474e20d0d247d4cbafb2f405e32c37 Assembly-CSharp.dll:.BordeIzquierdoScript
 e6ae40841db498b6e673877ac45ad208 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator

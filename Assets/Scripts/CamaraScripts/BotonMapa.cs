@@ -14,12 +14,15 @@ public class BotonMapa : MonoBehaviour, IPointerDownHandler
     private CamaraController camara;
     private Image sprite;
 
+    private SonidosJuego sonidoCamara;
+
     // Start is called before the first frame update
     void Start()
     {
         camara = GameObject.Find("Main Camera").GetComponent<CamaraController>();
         sprite = GetComponent<Image>();
 
+        sonidoCamara = GameObject.Find("Main Camera").GetComponent<SonidosJuego>();
     }
 
     void Update()
@@ -29,7 +32,7 @@ public class BotonMapa : MonoBehaviour, IPointerDownHandler
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        Debug.Log("clicky");
+        sonidoCamara.reproducirSonidoCambioCamara();
         camara.cambiarUbicacion(habitacion.transform.position);
         camara.camaraActual = habitacion;
         camaraActiva();

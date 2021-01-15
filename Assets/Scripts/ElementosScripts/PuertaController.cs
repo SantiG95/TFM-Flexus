@@ -15,12 +15,18 @@ public class PuertaController : MonoBehaviour
 
     private bool juegoContinua;
 
+    private AudioSource sonidosPuerta;
+    public AudioClip puertaAbriendo;
+    public AudioClip puertaCerrando;
+    public AudioClip puertaGolpeada;
+
     // Start is called before the first frame update
     void Start()
     {
         enemigosPresentes = GameObject.Find("Sala Principal").GetComponent<PresenciaEnemigos>();
         puertaBC = GetComponent<BoxCollider2D>();
         spritePuerta = GetComponent<SpriteRenderer>();
+        sonidosPuerta = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -37,6 +43,14 @@ public class PuertaController : MonoBehaviour
         if (juegoContinua)
         {
             cambiarSprite();
+            if (puertaAbierta)
+            {
+                sonidosPuerta.PlayOneShot(puertaCerrando, 1);
+            }
+            else
+            {
+                sonidosPuerta.PlayOneShot(puertaAbriendo, 1);
+            }
         }
     }
 
@@ -72,6 +86,14 @@ public class PuertaController : MonoBehaviour
                 cambiarSprite(0);
             }
             puertaAbierta = true;
+        }
+    }
+
+    public void sonidoPuertaGolpeada()
+    {
+        if (Random.Range(0, 100) < 50)
+        {
+            sonidosPuerta.PlayOneShot(puertaGolpeada, 1);
         }
     }
 

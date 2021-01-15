@@ -7,11 +7,12 @@ public class BotonIniciar : MonoBehaviour, IPointerDownHandler
 {
     public GameObject UI;
     public GameObject carta;
+    private SonidosMenu sonidosMenu;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        sonidosMenu = GameObject.Find("Main Camera").GetComponent<SonidosMenu>();
     }
 
     // Update is called once per frame
@@ -22,9 +23,9 @@ public class BotonIniciar : MonoBehaviour, IPointerDownHandler
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        Debug.Log("clicky");
         UI.SetActive(false);
         carta.SetActive(true);
+        sonidosMenu.reproducirSonido();
     }
 
 }

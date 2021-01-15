@@ -8,9 +8,15 @@ public class ChapaController : MonoBehaviour
 
     private Animator animatorChapa;
     private bool juegoContinua;
+
+    private AudioSource sonidosChapa;
+    public AudioClip chapaCorriendo;
+    public AudioClip chapaGolpeada;
+
     // Start is called before the first frame update
     void Start()
     {
+        sonidosChapa = GetComponent<AudioSource>();
         animatorChapa = GetComponent<Animator>();
         animatorChapa.SetBool("Abierto", true);
     }
@@ -31,6 +37,7 @@ public class ChapaController : MonoBehaviour
 
     public void cambiarSprite()
     {
+        sonidosChapa.PlayOneShot(chapaCorriendo, 1);
         if (puertaAbierta)
         {
             animatorChapa.SetTrigger("Moviendo");
@@ -44,5 +51,10 @@ public class ChapaController : MonoBehaviour
             animatorChapa.SetBool("Abierto", true);
             puertaAbierta = true;
         }
+    }
+
+    public void sonidoChapaGolpeada()
+    {
+        sonidosChapa.PlayOneShot(chapaGolpeada, 1);
     }
 }

@@ -198,6 +198,7 @@ public class CocoControl : MonoBehaviour
                         }
                         else
                         {
+                            GameObject.Find("Puerta").GetComponent<PuertaController>().sonidoPuertaGolpeada();
                             if (destinoActual.name == "Fuente")
                             {
                                 cambioHabitacion(3);
