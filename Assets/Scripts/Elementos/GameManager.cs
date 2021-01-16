@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public int numeroNoche = 1;
+
     public GameObject UI;
     public GameObject Mapa;
     public GameObject botonesMapa;
@@ -79,14 +81,16 @@ public class GameManager : MonoBehaviour
 
     public void lanzarFinal(bool asesinado)
     {
+        Camara.GetComponent<AudioSource>().Stop();
         Camara.GetComponent<CamaraController>().juegoContinua = false;
-        listaEnemigos[0].GetComponent<CocoControl>().juegoActivo = false;
+        juegoContinua = false;
         if (asesinado)
         {
             UI.SetActive(true);
             Mapa.SetActive(false);
             botonesMapa.SetActive(false);
-            finDelJuegoTexto.gameObject.SetActive(true);
+            //finDelJuegoTexto.gameObject.SetActive(true);
+            GameObject.Find("Transicion").GetComponent<Transicion>().oscurecerPantallaMuerte();
             StartCoroutine(hacerCambioTitulo());
 
         }

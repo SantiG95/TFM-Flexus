@@ -7,6 +7,8 @@ public class SonidosJuego : MonoBehaviour
     private AudioSource sonidosJuego;
     public AudioClip sonidoCambioCamara;
 
+    public AudioClip pasosCoco;
+
 
     // Start is called before the first frame update
     void Start()
@@ -23,5 +25,10 @@ public class SonidosJuego : MonoBehaviour
     public void reproducirSonidoCambioCamara()
     {
         sonidosJuego.PlayOneShot(sonidoCambioCamara, 1);
+    }
+
+    public void reproducirPasosCoco()
+    {
+        sonidosJuego.PlayOneShot(pasosCoco, 1);
     }
 }

@@ -4,45 +4,38 @@ using UnityEngine;
 
 public class SalaPrincipalScript : MonoBehaviour
 {
-    private CocoControl coco;
-    public GameObject pato;
-    public GameObject sinNombre;
+    private Animator animacionesAtaque;
 
-    private SpriteHabitaciones cambiaSprite;
-    private PuertaController puerta;
-    private PresenciaEnemigos presenciaEnemigos;
+    private GameObject puerta;
+    private GameObject chapa;
+
+    private AudioSource sonidosSusto;
+    public AudioClip sonidoCoco;
 
     // Start is called before the first frame update
     void Start()
     {
-        coco = GameObject.Find("Coco").GetComponent<CocoControl>();
+        sonidosSusto = GetComponent<AudioSource>();
+        animacionesAtaque = GetComponent<Animator>();
 
-        cambiaSprite = GameObject.Find("Lugares").GetComponent<SpriteHabitaciones>();
-        puerta = GameObject.Find("Puerta").GetComponent<PuertaController>();
-        presenciaEnemigos = GetComponent<PresenciaEnemigos>();
+        puerta = GameObject.Find("Puerta");
+        chapa = GameObject.Find("Chapa");
     }
 
     // Update is called once per frame
     void Update()
     {
-        //detectarEnemigos();
+        
     }
 
-    /*void detectarEnemigos()
+    public void cocoAtaca()
     {
-        if (presenciaEnemigos.cocoPresente && patoPresente && sinNombrePresente)
-        {
-            switch (coco.estado)
-            {
-                case 0:
-                    puerta.cambiarSprite(2);
-                    break;
-            }
+        puerta.SetActive(false);
+        chapa.SetActive(false);
+        animacionesAtaque.SetTrigger("cocoAtaca");
+        sonidosSusto.PlayOneShot(sonidoCoco, 1);
+        GameObject.Find("Main Camera").GetComponent<AudioSource>().Stop();
 
-        }
-        else
-        {
-            cambiaSprite.cambiarSprite("Callejon", 0);
-        }
-    }*/
+        GameObject.Find("Manager").GetComponent<GameManager>().lanzarFinal(true);
+    }
 }

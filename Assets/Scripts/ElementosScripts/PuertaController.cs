@@ -13,7 +13,7 @@ public class PuertaController : MonoBehaviour
     public bool puertaAbierta = true;
     public GameObject habitacionCamara;
 
-    private bool juegoContinua;
+    public bool juegoContinua;
 
     private AudioSource sonidosPuerta;
     public AudioClip puertaAbriendo;

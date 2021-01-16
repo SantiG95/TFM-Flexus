@@ -7,7 +7,7 @@ public class ChapaController : MonoBehaviour
     public bool puertaAbierta = true;
 
     private Animator animatorChapa;
-    private bool juegoContinua;
+    public  bool juegoContinua;
 
     private AudioSource sonidosChapa;
     public AudioClip chapaCorriendo;

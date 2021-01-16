@@ -73,9 +73,11 @@
     <Compile Include="Assets\Scripts\Elementos\EnergiaIndicador.cs" />
     <Compile Include="Assets\Scripts\Elementos\GameManager.cs" />
     <Compile Include="Assets\Scripts\Elementos\SonidosJuego.cs" />
+    <Compile Include="Assets\Scripts\Elementos\Transicion.cs" />
     <Compile Include="Assets\Scripts\ElementosScripts\ChapaController.cs" />
     <Compile Include="Assets\Scripts\ElementosScripts\PuertaController.cs" />
     <Compile Include="Assets\Scripts\Enemigos\CocoControl.cs" />
+    <Compile Include="Assets\Scripts\Enemigos\terminarJuego.cs" />
     <Compile Include="Assets\Scripts\Habitaciones\CallejonScript.cs" />
     <Compile Include="Assets\Scripts\Habitaciones\ExteriorScript.cs" />
     <Compile Include="Assets\Scripts\Habitaciones\FuenteScript.cs" />

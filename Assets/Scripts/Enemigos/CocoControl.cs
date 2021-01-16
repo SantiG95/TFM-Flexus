@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class CocoControl : MonoBehaviour
 {
+    private Animator cocoAtaca;
+    private SonidosJuego sonidos;
+
     public float contador = 0;
 
     public int estado = 0;
@@ -22,11 +25,14 @@ public class CocoControl : MonoBehaviour
 
     void Start()
     {
+        sonidos = GameObject.Find("Main Camera").GetComponent<SonidosJuego>();
+        cocoAtaca = GameObject.Find("Sala Principal").GetComponent<Animator>();
         elegirDestino();
     }
 
     void Update()
     {
+        juegoActivo = GameObject.Find("Manager").GetComponent<GameManager>().juegoContinua;
         if (juegoActivo)
         {
             verHabitacionMiraCamara();
@@ -92,7 +98,7 @@ public class CocoControl : MonoBehaviour
     void moverse()
     {
         //TODO tiempo desicion random
-        if(contador > 5 && darUnPaso())
+        if(contador > 5 && darUnPaso() && juegoActivo)
         {
             if (darUnPaso())
             {
@@ -194,7 +200,7 @@ public class CocoControl : MonoBehaviour
                         if (puertaAbierta)
                         {
                             //TODO matar y terminar el juego
-                            GameObject.Find("Manager").GetComponent<GameManager>().lanzarFinal(true);
+                            GameObject.Find("Sala Principal").GetComponent<SalaPrincipalScript>().cocoAtaca();
                         }
                         else
                         {
@@ -278,5 +284,7 @@ public class CocoControl : MonoBehaviour
         habitacionActual = destinoActual;
         habitacionActual.GetComponent<PresenciaEnemigos>().cocoPresente = true;
         estado = estadoNuevo;
+        sonidos.reproducirPasosCoco();
+
     }
 }
