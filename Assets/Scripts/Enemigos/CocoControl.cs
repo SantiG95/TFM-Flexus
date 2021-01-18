@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CocoControl : MonoBehaviour
 {
-    private Animator cocoAtaca;
+    private Animator ataques;
     private SonidosJuego sonidos;
 
     public float contador = 0;
@@ -26,12 +26,20 @@ public class CocoControl : MonoBehaviour
     void Start()
     {
         sonidos = GameObject.Find("Main Camera").GetComponent<SonidosJuego>();
-        cocoAtaca = GameObject.Find("Sala Principal").GetComponent<Animator>();
+        ataques = GameObject.Find("Ataques").GetComponent<Animator>();
         elegirDestino();
     }
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            hacerAtaque();
+        }
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            cambioHabitacion(0);
+        }
         juegoActivo = GameObject.Find("Manager").GetComponent<GameManager>().juegoContinua;
         if (juegoActivo)
         {
@@ -200,7 +208,7 @@ public class CocoControl : MonoBehaviour
                         if (puertaAbierta)
                         {
                             //TODO matar y terminar el juego
-                            GameObject.Find("Sala Principal").GetComponent<SalaPrincipalScript>().cocoAtaca();
+                            hacerAtaque();
                         }
                         else
                         {
@@ -280,11 +288,21 @@ public class CocoControl : MonoBehaviour
 
     void cambioHabitacion(int estadoNuevo)
     {
+        if (habitacionActual.name != "Sala Principal")
+        {
+            sonidos.reproducirPasosCoco();
+        }
         habitacionActual.GetComponent<PresenciaEnemigos>().cocoPresente = false;
         habitacionActual = destinoActual;
         habitacionActual.GetComponent<PresenciaEnemigos>().cocoPresente = true;
         estado = estadoNuevo;
-        sonidos.reproducirPasosCoco();
+    }
 
+    public void hacerAtaque()
+    {
+        sonidos.detenerSonido();
+        sonidos.reproducirAtaqueCoco();
+        ataques.SetTrigger("CocoAtaca");
+        GameObject.Find("Manager").GetComponent<GameManager>().lanzarFinal(true);
     }
 }

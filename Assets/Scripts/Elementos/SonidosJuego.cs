@@ -9,6 +9,8 @@ public class SonidosJuego : MonoBehaviour
 
     public AudioClip pasosCoco;
 
+    public AudioClip ataqueCoco;
+
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +24,11 @@ public class SonidosJuego : MonoBehaviour
         
     }
 
+    public void detenerSonido()
+    {
+        sonidosJuego.Stop();
+    }
+
     public void reproducirSonidoCambioCamara()
     {
         sonidosJuego.PlayOneShot(sonidoCambioCamara, 1);
@@ -30,5 +37,11 @@ public class SonidosJuego : MonoBehaviour
     public void reproducirPasosCoco()
     {
         sonidosJuego.PlayOneShot(pasosCoco, 1);
+    }
+
+    public void reproducirAtaqueCoco()
+    {
+        Debug.Log("Entro");
+        sonidosJuego.PlayOneShot(ataqueCoco, 1);
     }
 }

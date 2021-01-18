@@ -81,7 +81,6 @@ public class GameManager : MonoBehaviour
 
     public void lanzarFinal(bool asesinado)
     {
-        Camara.GetComponent<AudioSource>().Stop();
         Camara.GetComponent<CamaraController>().juegoContinua = false;
         juegoContinua = false;
         if (asesinado)
