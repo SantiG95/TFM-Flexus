@@ -130,12 +130,12 @@ b3ab2106268377ffe25dd18ac23dca28 Unity.TextMeshPro.dll:TMPro.TMP_Asset
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.BotonSalir
 71bb6a6b6c8f052f948db64c7dd3ca4f Unity.TextMeshPro.dll:TMPro.TMP_SpriteAnimator
 a730cd42e5be873a7caf13505625cd83 Assembly-CSharp.dll:.CamaraController
-8b51091c1db87e4c89d57814ad261b29 Assembly-CSharp.dll:.Transicion
+00a5c7c428b65d0d6997492eea89c3b0 Assembly-CSharp.dll:.Transicion
 5daae957e46dc29048e748fe60667c67 Assembly-CSharp.dll:.SpriteHabitaciones
 4fd8bf02e3089425d3502e26c44ba31a Unity.TextMeshPro.dll:TMPro.TextContainer
 8e5fe96563baf582d41a56c71d91c5ab Assembly-CSharp.dll:.EnergiaIndicador
 ac1a8b0e0417244bbbebb32427302946 Assembly-CSharp.dll:.CocoControl
-f2d2350b008df2fcd897eac4dfda8357 Assembly-CSharp.dll:.SonidosJuego
+7bbf3eecee8a23b1e6ae5b5d3d9c00bb Assembly-CSharp.dll:.SonidosJuego
 54474e20d0d247d4cbafb2f405e32c37 Assembly-CSharp.dll:.BordeIzquierdoScript
 e6ae40841db498b6e673877ac45ad208 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator
 71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.Networking.dll:UnityEngine.Networking.NetworkBehaviour

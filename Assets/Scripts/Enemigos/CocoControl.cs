@@ -300,7 +300,6 @@ public class CocoControl : MonoBehaviour
 
     public void hacerAtaque()
     {
-        sonidos.detenerSonido();
         sonidos.reproducirAtaqueCoco();
         ataques.SetTrigger("CocoAtaca");
         GameObject.Find("Manager").GetComponent<GameManager>().lanzarFinal(true);

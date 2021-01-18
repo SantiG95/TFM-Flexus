@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,6 +11,9 @@ public class SonidosJuego : MonoBehaviour
     public AudioClip pasosCoco;
 
     public AudioClip ataqueCoco;
+
+    public AudioClip alarma;
+    public AudioClip victoria;
 
 
     // Start is called before the first frame update
@@ -41,7 +45,17 @@ public class SonidosJuego : MonoBehaviour
 
     public void reproducirAtaqueCoco()
     {
-        Debug.Log("Entro");
+        detenerSonido();
         sonidosJuego.PlayOneShot(ataqueCoco, 1);
+    }
+
+    public void reproducirAlarma()
+    {
+        detenerSonido();
+        sonidosJuego.PlayOneShot(alarma, 1);
+    }
+    public void reproducirVictoria()
+    {
+        sonidosJuego.PlayOneShot(victoria, 0.7f);
     }
 }

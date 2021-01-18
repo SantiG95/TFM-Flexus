@@ -38,6 +38,10 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            tiempo = 538;
+        }
         contarEnergia();
         if (juegoContinua)
         {
@@ -75,7 +79,7 @@ public class GameManager : MonoBehaviour
         if(tiempo == tiempoFinal)
         {
             //lanzarFinal(false);
-            lanzarFinal(true);
+            lanzarFinal(false);
         }
     }
 
@@ -91,8 +95,17 @@ public class GameManager : MonoBehaviour
             //finDelJuegoTexto.gameObject.SetActive(true);
             GameObject.Find("Transicion").GetComponent<Transicion>().oscurecerPantallaMuerte();
             StartCoroutine(hacerCambioTitulo());
-
         }
+        else
+        {
+            UI.SetActive(true);
+            Mapa.SetActive(false);
+            botonesMapa.SetActive(false);
+            //finDelJuegoTexto.gameObject.SetActive(true);
+            GameObject.Find("Transicion").GetComponent<Transicion>().oscurecerPantallaVictoria();
+            StartCoroutine(hacerCambioTitulo());
+        }
+
     }
 
     IEnumerator hacerCambioTitulo()
