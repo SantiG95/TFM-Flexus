@@ -85,6 +85,8 @@
     <Compile Include="Assets\Scripts\Habitaciones\PresenciaEnemigos.cs" />
     <Compile Include="Assets\Scripts\Habitaciones\SalaPrincipalScript.cs" />
     <Compile Include="Assets\Scripts\Habitaciones\SpriteHabitaciones.cs" />
+    <Compile Include="Assets\Scripts\PantallaFinal\FinalController.cs" />
+    <Compile Include="Assets\Scripts\PantallaFinal\TransicionFinal.cs" />
     <Compile Include="Assets\Scripts\Titulo\BotonContinuar.cs" />
     <Compile Include="Assets\Scripts\Titulo\BotonIniciar.cs" />
     <Compile Include="Assets\Scripts\Titulo\BotonSalir.cs" />

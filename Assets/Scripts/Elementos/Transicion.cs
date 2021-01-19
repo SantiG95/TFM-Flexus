@@ -66,7 +66,7 @@ public class Transicion : MonoBehaviour
         yield return new WaitForSeconds(1);
         pantallaBlanca.SetActive(true);
         textoNoche.text = "FIN DEL JUEGO";
-        GetComponent<Canvas>().sortingOrder = 2;
+        GetComponent<Canvas>().sortingOrder = 3;
         yield return new WaitForSeconds(0.5f);
         for (float i = 0; i <= 1; i += Time.deltaTime)
         {
@@ -94,9 +94,17 @@ public class Transicion : MonoBehaviour
             horaFinalTexto.color = new Color(1, 1, 1, i);
             yield return null;
         }
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1.75f);
         sonidosJuego.reproducirVictoria();
         yield return new WaitForSeconds(6);
+        for (float i = 1; i >= 0; i -= Time.deltaTime)
+        {
+            // set color with i as alpha
+            horaFinalTexto.color = new Color(1, 1, 1, i);
+            yield return null;
+
+        }
+
 
     }
 }

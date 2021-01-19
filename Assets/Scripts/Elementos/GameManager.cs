@@ -38,10 +38,6 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            tiempo = 538;
-        }
         contarEnergia();
         if (juegoContinua)
         {
@@ -103,7 +99,7 @@ public class GameManager : MonoBehaviour
             botonesMapa.SetActive(false);
             //finDelJuegoTexto.gameObject.SetActive(true);
             GameObject.Find("Transicion").GetComponent<Transicion>().oscurecerPantallaVictoria();
-            StartCoroutine(hacerCambioTitulo());
+            StartCoroutine(hacerCambioSiguiente());
         }
 
     }
@@ -112,6 +108,12 @@ public class GameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(10);
         SceneManager.LoadScene("Titulo");
+    }
+
+    IEnumerator hacerCambioSiguiente()
+    {
+        yield return new WaitForSeconds(10);
+        SceneManager.LoadScene(2);
     }
 
     void actualizarConsumo()

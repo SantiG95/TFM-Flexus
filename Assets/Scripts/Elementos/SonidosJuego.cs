@@ -40,22 +40,23 @@ public class SonidosJuego : MonoBehaviour
 
     public void reproducirPasosCoco()
     {
-        sonidosJuego.PlayOneShot(pasosCoco, 1);
+        sonidosJuego.PlayOneShot(pasosCoco, 0.3f);
     }
 
     public void reproducirAtaqueCoco()
     {
         detenerSonido();
-        sonidosJuego.PlayOneShot(ataqueCoco, 1);
+        sonidosJuego.PlayOneShot(ataqueCoco, 0.8f);
     }
 
     public void reproducirAlarma()
     {
         detenerSonido();
-        sonidosJuego.PlayOneShot(alarma, 1);
+        sonidosJuego.PlayOneShot(alarma, 0.4f);
     }
     public void reproducirVictoria()
     {
-        sonidosJuego.PlayOneShot(victoria, 0.7f);
+        detenerSonido();
+        sonidosJuego.PlayOneShot(victoria, 0.6f);
     }
 }

@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Escenas/Juego.unity
     guid: f2d952a8ae5d0eb4c8f5e1e0181a39f1
+  - enabled: 1
+    path: Assets/Escenas/Gracias.unity
+    guid: 474f840565d19d34c8775af428c2df93
   m_configObjects: {}

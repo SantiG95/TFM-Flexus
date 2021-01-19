@@ -4,6 +4,7 @@ C:/Users/santi/Desktop/ProyectoSkittyPrueba/TFM Flex.exe
 SceneListBegin?
 Assets/Escenas/Titulo.unity
 Assets/Escenas/Juego.unity
+Assets/Escenas/Gracias.unity
 SceneListEnd?
 3c08375166df118bd1801438fc36b92f Unity.TextMeshPro.dll:TMPro.TMP_SelectionCaret
 77c21079ace8d76ce6e941d3dabbfe6e Unity.TextMeshPro.dll:TMPro.TMP_Dropdown
@@ -134,7 +135,7 @@ a730cd42e5be873a7caf13505625cd83 Assembly-CSharp.dll:.CamaraController
 5daae957e46dc29048e748fe60667c67 Assembly-CSharp.dll:.SpriteHabitaciones
 4fd8bf02e3089425d3502e26c44ba31a Unity.TextMeshPro.dll:TMPro.TextContainer
 8e5fe96563baf582d41a56c71d91c5ab Assembly-CSharp.dll:.EnergiaIndicador
-ac1a8b0e0417244bbbebb32427302946 Assembly-CSharp.dll:.CocoControl
+64f081c5f0dd66f0d98f51b503386c8b Assembly-CSharp.dll:.CocoControl
 7bbf3eecee8a23b1e6ae5b5d3d9c00bb Assembly-CSharp.dll:.SonidosJuego
 54474e20d0d247d4cbafb2f405e32c37 Assembly-CSharp.dll:.BordeIzquierdoScript
 e6ae40841db498b6e673877ac45ad208 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator
@@ -182,3 +183,5 @@ df434544c9f7b33d1cc7e635b180d279 Unity.TextMeshPro.dll:TMPro.TextMeshPro
 8a8d2f2f55d16185cf1f60cc0d68a77a Assembly-CSharp.dll:.PuertaController
 8649814970b42d345b89944b862453cc Unity.TextMeshPro.dll:TMPro.TMP_SubMesh
 94cd8044ea4644ee8b097f2278f56102 Assembly-CSharp.dll:.MoverCamaraDerecha
+71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.FinalController
+71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.TransicionFinal

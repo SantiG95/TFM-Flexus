@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CocoControl : MonoBehaviour
 {
-    private Animator ataques;
+    public Animator ataques;
     private SonidosJuego sonidos;
 
     public float contador = 0;
@@ -26,20 +26,11 @@ public class CocoControl : MonoBehaviour
     void Start()
     {
         sonidos = GameObject.Find("Main Camera").GetComponent<SonidosJuego>();
-        ataques = GameObject.Find("Ataques").GetComponent<Animator>();
         elegirDestino();
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.I))
-        {
-            hacerAtaque();
-        }
-        if (Input.GetKeyDown(KeyCode.O))
-        {
-            cambioHabitacion(0);
-        }
         juegoActivo = GameObject.Find("Manager").GetComponent<GameManager>().juegoContinua;
         if (juegoActivo)
         {
@@ -106,7 +97,7 @@ public class CocoControl : MonoBehaviour
     void moverse()
     {
         //TODO tiempo desicion random
-        if(contador > 5 && darUnPaso() && juegoActivo)
+        if(contador > 10 && darUnPaso() && juegoActivo)
         {
             if (darUnPaso())
             {
@@ -235,7 +226,7 @@ public class CocoControl : MonoBehaviour
 
     bool darUnPaso()
     {
-        return Random.Range(0, 100) < 50;
+        return Random.Range(0, 100) < 75;
     }
 
     void elegirDestino()
@@ -300,6 +291,8 @@ public class CocoControl : MonoBehaviour
 
     public void hacerAtaque()
     {
+        ataques.gameObject.SetActive(true);
+        ataques = GameObject.Find("Ataques").GetComponent<Animator>();
         sonidos.reproducirAtaqueCoco();
         ataques.SetTrigger("CocoAtaca");
         GameObject.Find("Manager").GetComponent<GameManager>().lanzarFinal(true);
