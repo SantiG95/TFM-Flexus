@@ -51,7 +51,7 @@ public class CamaraController : MonoBehaviour
 
     }
 
-    void cambiarModo()
+    public void cambiarModo()
     {
         mirandoCamaras = !mirandoCamaras;
         cambiarCamara();

@@ -62,9 +62,13 @@ public class PuertaController : MonoBehaviour
 
     void actualizarImagenEnemigos()
     {
-        if (enemigosPresentes.cocoPresente && (habitacionCamara.name != "Sala Principal" || !juegoContinua))
+        if (enemigosPresentes.cocoPresente && puertaAbierta == true)
         {
             cambiarSprite(2);
+        }
+        else if (!enemigosPresentes.cocoPresente && puertaAbierta == true)
+        {
+            cambiarSprite(0);
         }
     }
 

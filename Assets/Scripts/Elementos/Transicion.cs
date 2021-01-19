@@ -39,6 +39,7 @@ public class Transicion : MonoBehaviour
                 textoNoche.color = new Color(1, 1, 1, i);
                 yield return null;
             }
+            textoNoche.gameObject.SetActive(false);
             GetComponent<Canvas>().sortingOrder = -1;
 
         }
@@ -65,6 +66,7 @@ public class Transicion : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
         pantallaBlanca.SetActive(true);
+        textoNoche.gameObject.SetActive(true);
         textoNoche.text = "FIN DEL JUEGO";
         GetComponent<Canvas>().sortingOrder = 3;
         yield return new WaitForSeconds(0.5f);

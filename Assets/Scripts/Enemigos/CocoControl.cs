@@ -198,7 +198,6 @@ public class CocoControl : MonoBehaviour
                     case "Sala Principal":
                         if (puertaAbierta)
                         {
-                            //TODO matar y terminar el juego
                             hacerAtaque();
                         }
                         else
@@ -211,7 +210,6 @@ public class CocoControl : MonoBehaviour
                             else
                             {
                                 cambioHabitacion(0);
-
                             }
                         }
                         break;
@@ -291,6 +289,10 @@ public class CocoControl : MonoBehaviour
 
     public void hacerAtaque()
     {
+        if(GameObject.Find("Main Camera").GetComponent<CamaraController>().mirandoCamaras)
+        {
+            GameObject.Find("Main Camera").GetComponent<CamaraController>().cambiarModo();
+        }
         ataques.gameObject.SetActive(true);
         ataques = GameObject.Find("Ataques").GetComponent<Animator>();
         sonidos.reproducirAtaqueCoco();

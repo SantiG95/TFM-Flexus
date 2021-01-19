@@ -3824,6 +3824,32 @@ MonoBehaviour:
   cocoPresente: 0
   patoPresente: 0
   sinNombrePresente: 0
+--- !u!61 &7851364613063962022
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7851364613063962018}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 2.8026278, y: 1.3472404}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 16, y: 7.2}
+    newSize: {x: 4, y: 1.8}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.2820077, y: 0.296865}
+  m_EdgeRadius: 0
 --- !u!114 &7851364613063962023
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3837,6 +3863,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sonidoCoco: {fileID: 8300000, guid: 878abc1a3dc1a8643b6fc6927b40262f, type: 3}
+  easterEgg: {fileID: 8300000, guid: 46820a8a0a8baa343adb9cf05b41d045, type: 3}
 --- !u!82 &7851364613063962024
 AudioSource:
   m_ObjectHideFlags: 0
@@ -4083,6 +4110,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Transicion
+      objectReference: {fileID: 0}
+    - target: {fileID: 8521794355992784068, guid: e70279905a22a2443908d327a862a7ed,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8521794355992784071, guid: e70279905a22a2443908d327a862a7ed,
         type: 3}

@@ -70,6 +70,7 @@
     <Compile Include="Assets\Scripts\CamaraScripts\LimitesCamara.cs" />
     <Compile Include="Assets\Scripts\CamaraScripts\MoverCamaraDerecha.cs" />
     <Compile Include="Assets\Scripts\CamaraScripts\MoverCamaraIzquierda.cs" />
+    <Compile Include="Assets\Scripts\Elementos\AdvertenciaController.cs" />
     <Compile Include="Assets\Scripts\Elementos\EnergiaIndicador.cs" />
     <Compile Include="Assets\Scripts\Elementos\GameManager.cs" />
     <Compile Include="Assets\Scripts\Elementos\SonidosJuego.cs" />

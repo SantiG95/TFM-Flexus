@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class SalaPrincipalScript : MonoBehaviour
+public class SalaPrincipalScript : MonoBehaviour//, IPointerDownHandler
 {
     private Animator animacionesAtaque;
 
@@ -11,6 +12,8 @@ public class SalaPrincipalScript : MonoBehaviour
 
     private AudioSource sonidosSusto;
     public AudioClip sonidoCoco;
+
+    public AudioClip easterEgg;
 
     // Start is called before the first frame update
     void Start()
@@ -37,5 +40,10 @@ public class SalaPrincipalScript : MonoBehaviour
         GameObject.Find("Main Camera").GetComponent<AudioSource>().Stop();
 
         GameObject.Find("Manager").GetComponent<GameManager>().lanzarFinal(true);
+    }
+
+    private void OnMouseDown()
+    {
+        sonidosSusto.PlayOneShot(easterEgg, 1);
     }
 }

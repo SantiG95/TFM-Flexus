@@ -32,10 +32,14 @@ public class BotonMapa : MonoBehaviour, IPointerDownHandler
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        sonidoCamara.reproducirSonidoCambioCamara();
-        camara.cambiarUbicacion(habitacion.transform.position);
-        camara.camaraActual = habitacion;
-        camaraActiva();
+        if (!activa)
+        {
+            sonidoCamara.reproducirSonidoCambioCamara();
+            camara.cambiarUbicacion(habitacion.transform.position);
+            camara.camaraActual = habitacion;
+            camaraActiva();
+        }
+        
     }
 
     public void ponerCamarasNoActivas()
