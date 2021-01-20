@@ -113,7 +113,7 @@ public class GameManager : MonoBehaviour
     IEnumerator hacerCambioSiguiente()
     {
         yield return new WaitForSeconds(10);
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene("Gracias");
     }
 
     void actualizarConsumo()

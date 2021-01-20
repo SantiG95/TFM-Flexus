@@ -1,6 +1,6 @@
 Win64
 PlayerPath?
-C:/Users/santi/Desktop/ProyectoSkittyPrueba/TFM Flex.exe
+C:/Users/santi/Desktop/ProyectoSkittyPrueba/TFM Flexus.exe
 SceneListBegin?
 Assets/Escenas/Advertencia.unity
 Assets/Escenas/Titulo.unity
@@ -173,6 +173,7 @@ fb6a1ea36b4f6ef5948d283d93760765 UnityEngine.GoogleAudioSpatializer.dll:UnityEng
 fb6a1ea36b4f6ef5948d283d93760765 UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioRoom
 5b0391b7e3d9ea9db6c0a8fbd0ca23f6 UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioSoundfieldExtension
 5b0391b7e3d9ea9db6c0a8fbd0ca23f6 UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioSourceExtension
+71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.AdvertenciaController
 3b760e6526e13f7504f59e210145899a Unity.TextMeshPro.dll:TMPro.TextMeshProUGUI
 cfad333eeaf3fc42e4f3fc44739a9465 Assembly-CSharp.dll:.SalaPrincipalScript
 507174d46dacbc5fe45e28485db5dd1e Unity.Analytics.DataPrivacy.dll:UnityEngine.Analytics.DataPrivacyButton
@@ -186,4 +187,3 @@ df434544c9f7b33d1cc7e635b180d279 Unity.TextMeshPro.dll:TMPro.TextMeshPro
 8a8d2f2f55d16185cf1f60cc0d68a77a Assembly-CSharp.dll:.PuertaController
 8649814970b42d345b89944b862453cc Unity.TextMeshPro.dll:TMPro.TMP_SubMesh
 94cd8044ea4644ee8b097f2278f56102 Assembly-CSharp.dll:.MoverCamaraDerecha
-71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.AdvertenciaController

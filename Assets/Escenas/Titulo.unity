@@ -317,8 +317,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -38, y: -2}
-  m_SizeDelta: {x: 355.2, y: 112.399994}
+  m_AnchoredPosition: {x: -116, y: 25}
+  m_SizeDelta: {x: 211.32, y: 112.399994}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &507921577
 MonoBehaviour:
@@ -345,13 +345,15 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 109
-    m_Alignment: 0
+    m_Alignment: 2
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Nasgael, Yomey
+  m_Text: 'Nasgael, Yomey
+
+    Papelion'
 --- !u!222 &507921578
 CanvasRenderer:
   m_ObjectHideFlags: 0

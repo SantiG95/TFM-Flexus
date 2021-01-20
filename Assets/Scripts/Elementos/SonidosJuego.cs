@@ -52,11 +52,11 @@ public class SonidosJuego : MonoBehaviour
     public void reproducirAlarma()
     {
         detenerSonido();
-        sonidosJuego.PlayOneShot(alarma, 0.4f);
+        sonidosJuego.PlayOneShot(alarma, 0.2f);
     }
     public void reproducirVictoria()
     {
         detenerSonido();
-        sonidosJuego.PlayOneShot(victoria, 0.6f);
+        sonidosJuego.PlayOneShot(victoria, 0.3f);
     }
 }
