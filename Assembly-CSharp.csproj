@@ -65,6 +65,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\CamaraScripts\BordeDerechoScript.cs" />
     <Compile Include="Assets\Scripts\CamaraScripts\BordeIzquierdoScript.cs" />
+    <Compile Include="Assets\Scripts\CamaraScripts\BotonController.cs" />
     <Compile Include="Assets\Scripts\CamaraScripts\BotonMapa.cs" />
     <Compile Include="Assets\Scripts\CamaraScripts\CamaraController.cs" />
     <Compile Include="Assets\Scripts\CamaraScripts\LimitesCamara.cs" />

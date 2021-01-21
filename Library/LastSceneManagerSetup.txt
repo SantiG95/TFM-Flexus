@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Escenas/Titulo.unity
+- path: Assets/Escenas/Advertencia.unity
   isLoaded: 1
   isActive: 1

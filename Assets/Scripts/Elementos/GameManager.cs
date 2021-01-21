@@ -74,7 +74,6 @@ public class GameManager : MonoBehaviour
     {
         if(tiempo == tiempoFinal)
         {
-            //lanzarFinal(false);
             lanzarFinal(false);
         }
     }

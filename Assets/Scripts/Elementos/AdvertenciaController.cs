@@ -10,7 +10,15 @@ public class AdvertenciaController : MonoBehaviour
     {
         StartCoroutine(tiempoAdvertencia());
     }
-    
+
+    private void Update()
+    {
+        if (Input.anyKey)
+        {
+            SceneManager.LoadScene("Titulo");
+        }
+    }
+
     IEnumerator tiempoAdvertencia()
     {
         yield return new WaitForSeconds(7);
