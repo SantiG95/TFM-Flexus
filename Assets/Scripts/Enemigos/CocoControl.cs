@@ -7,36 +7,37 @@ public class CocoControl : MonoBehaviour
     public Animator ataques;
     private SonidosJuego sonidos;
 
+    public int dificultad;
     public float contador = 0;
 
     public int estado = 0;
     public bool activo = false;
 
+    private CamaraController camaraPrincipal;
     public GameObject habitacionActual;
     public GameObject habitacionCamara;
 
     public GameObject destinoActual;
 
-    public bool puertaAbierta;
-    public int quieroMoverme = 0;
+    private PuertaController puerta;
 
     public bool juegoActivo = true;
-
+        
 
     void Start()
     {
+        camaraPrincipal = GameObject.Find("Main Camera").GetComponent<CamaraController>();
         sonidos = GameObject.Find("Main Camera").GetComponent<SonidosJuego>();
+        puerta = GameObject.Find("Puerta").GetComponent<PuertaController>();
         elegirDestino();
     }
 
     void Update()
     {
-        juegoActivo = GameObject.Find("Manager").GetComponent<GameManager>().juegoContinua;
         if (juegoActivo)
         {
             verHabitacionMiraCamara();
             cuentaTiempo();
-            puertaAbierta = GameObject.Find("Puerta").GetComponent<PuertaController>().puertaAbierta;
 
             if (!activo)
             {
@@ -63,25 +64,25 @@ public class CocoControl : MonoBehaviour
     {
         if (!activo)
         {
-            //TODO tiempo despertar random
-            if (contador > 5f && estado != 3)
+            if (contador > 5f && estado != 3 && darUnPaso())
             {
                 estado++;
                 contador = 0;
             }
-            else if (estado == 3)
+            else if (contador > 5f && estado == 3)
             {
                 activo = true;
             }
+            else if (contador > 5f)
+            {
+                contador = 0;
+            }
         }
-        
-        
-        
     }
 
     void verHabitacionMiraCamara()
     {
-        habitacionCamara = GameObject.Find("Main Camera").GetComponent<CamaraController>().camaraActual;
+        habitacionCamara = camaraPrincipal.camaraActual;
     }
 
     void cuentaTiempo()
@@ -90,14 +91,11 @@ public class CocoControl : MonoBehaviour
         {
             contador += Time.deltaTime;
         }
-
-        
     }
 
     void moverse()
     {
-        //TODO tiempo desicion random
-        if(contador > 10 && darUnPaso() && juegoActivo)
+        if(contador > 5)
         {
             if (darUnPaso())
             {
@@ -122,7 +120,7 @@ public class CocoControl : MonoBehaviour
                                 break;
 
                             case 5:
-                                if (Random.Range(0,100) < 50)
+                                if (Random.Range(0, 100) < 75)
                                 {
                                     cambioHabitacion(0);
                                 }
@@ -138,7 +136,7 @@ public class CocoControl : MonoBehaviour
                         switch (estado)
                         {
                             case 0:
-                                if (Random.Range(0,100) < 20)
+                                if (Random.Range(0, 100) < 20)
                                 {
                                     estado = 1;
                                 }
@@ -157,7 +155,7 @@ public class CocoControl : MonoBehaviour
                                 {
                                     cambioHabitacion(3);
                                 }
-                            
+
                                 break;
                         }
                         break;
@@ -196,13 +194,13 @@ public class CocoControl : MonoBehaviour
                         break;
 
                     case "Sala Principal":
-                        if (puertaAbierta)
+                        if (puerta.puertaAbierta)
                         {
                             hacerAtaque();
                         }
                         else
                         {
-                            GameObject.Find("Puerta").GetComponent<PuertaController>().sonidoPuertaGolpeada();
+                            puerta.sonidoPuertaGolpeada();
                             if (destinoActual.name == "Fuente")
                             {
                                 cambioHabitacion(3);
@@ -213,18 +211,15 @@ public class CocoControl : MonoBehaviour
                             }
                         }
                         break;
-
-
                 }
             }
             contador = 0;
         }
-        
     }
 
     bool darUnPaso()
     {
-        return Random.Range(0, 100) < 75;
+        return Random.Range(1, 21) < dificultad;
     }
 
     void elegirDestino()
@@ -289,14 +284,29 @@ public class CocoControl : MonoBehaviour
 
     public void hacerAtaque()
     {
-        if(GameObject.Find("Main Camera").GetComponent<CamaraController>().mirandoCamaras)
+        if(camaraPrincipal.mirandoCamaras)
         {
-            GameObject.Find("Main Camera").GetComponent<CamaraController>().cambiarModo();
+            camaraPrincipal.cambiarModo();
         }
         ataques.gameObject.SetActive(true);
         ataques = GameObject.Find("Ataques").GetComponent<Animator>();
         sonidos.reproducirAtaqueCoco();
         ataques.SetTrigger("CocoAtaca");
         GameObject.Find("Manager").GetComponent<GameManager>().lanzarFinal(true);
+    }
+
+    public void desactivar()
+    {
+        juegoActivo = false;
+    }
+
+    public void ponerDificultad(int intDificultad)
+    {
+        dificultad = intDificultad;
+    }
+
+    public void aumentarDificultad()
+    {
+        dificultad++;
     }
 }

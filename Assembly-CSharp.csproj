@@ -47,6 +47,7 @@
   <PropertyGroup>
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <UnityProjectGenerator>Unity/VSTU</UnityProjectGenerator>
+    <UnityProjectGeneratorVersion>4.8.2.0</UnityProjectGeneratorVersion>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows64:19</UnityBuildTarget>
     <UnityVersion>2018.4.30f1</UnityVersion>
@@ -71,6 +72,7 @@
     <Compile Include="Assets\Scripts\CamaraScripts\LimitesCamara.cs" />
     <Compile Include="Assets\Scripts\CamaraScripts\MoverCamaraDerecha.cs" />
     <Compile Include="Assets\Scripts\CamaraScripts\MoverCamaraIzquierda.cs" />
+    <Compile Include="Assets\Scripts\EditorTools.cs" />
     <Compile Include="Assets\Scripts\Elementos\AdvertenciaController.cs" />
     <Compile Include="Assets\Scripts\Elementos\EnergiaIndicador.cs" />
     <Compile Include="Assets\Scripts\Elementos\GameManager.cs" />
@@ -80,6 +82,9 @@
     <Compile Include="Assets\Scripts\ElementosScripts\PuertaController.cs" />
     <Compile Include="Assets\Scripts\Enemigos\CocoControl.cs" />
     <Compile Include="Assets\Scripts\Enemigos\terminarJuego.cs" />
+    <Compile Include="Assets\Scripts\Guardado\DatosGuardado.cs" />
+    <Compile Include="Assets\Scripts\Guardado\DatosPartida.cs" />
+    <Compile Include="Assets\Scripts\Guardado\SistemaGuardado.cs" />
     <Compile Include="Assets\Scripts\Habitaciones\CallejonScript.cs" />
     <Compile Include="Assets\Scripts\Habitaciones\ExteriorScript.cs" />
     <Compile Include="Assets\Scripts\Habitaciones\FuenteScript.cs" />
@@ -93,6 +98,7 @@
     <Compile Include="Assets\Scripts\Titulo\BotonIniciar.cs" />
     <Compile Include="Assets\Scripts\Titulo\BotonSalir.cs" />
     <Compile Include="Assets\Scripts\Titulo\CartaControl.cs" />
+    <Compile Include="Assets\Scripts\Titulo\GameManagerTitulo.cs" />
     <Compile Include="Assets\Scripts\Titulo\SonidosMenu.cs" />
     <Compile Include="Assets\Scripts\Titulo\tituloFondo.cs" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />

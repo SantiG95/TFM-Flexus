@@ -1959,6 +1959,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numeroNoche: 1
+  transicion: {fileID: 8521794354087042662}
   UI: {fileID: 854409861}
   Mapa: {fileID: 515165702}
   botonesMapa: {fileID: 1381129121}
@@ -1976,7 +1977,6 @@ MonoBehaviour:
   tiempo: 0
   cansancio: 100
   tiempoDescuento: 9.6
-  contadorReset: 0
 --- !u!1 &1710384626
 GameObject:
   m_ObjectHideFlags: 0
@@ -4259,6 +4259,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8521794355992784070, guid: e70279905a22a2443908d327a862a7ed,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8521794355992784071, guid: e70279905a22a2443908d327a862a7ed,
         type: 3}
       propertyPath: pantallaBlanca
@@ -4371,3 +4376,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e70279905a22a2443908d327a862a7ed, type: 3}
+--- !u!1 &8521794354087042662 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8521794355992784068, guid: e70279905a22a2443908d327a862a7ed,
+    type: 3}
+  m_PrefabInstance: {fileID: 8521794354087042661}
+  m_PrefabAsset: {fileID: 0}

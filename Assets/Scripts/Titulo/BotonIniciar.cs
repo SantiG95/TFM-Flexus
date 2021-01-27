@@ -26,6 +26,7 @@ public class BotonIniciar : MonoBehaviour, IPointerDownHandler
         UI.SetActive(false);
         carta.SetActive(true);
         sonidosMenu.reproducirSonido();
+        PlayerPrefs.SetInt("nocheActual", 1);
     }
 
 }

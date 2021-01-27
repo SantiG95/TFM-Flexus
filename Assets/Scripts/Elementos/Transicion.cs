@@ -15,7 +15,7 @@ public class Transicion : MonoBehaviour
     void Start()
     {
         sonidosJuego = GameObject.Find("Main Camera").GetComponent<SonidosJuego>();
-        textoNoche.text = "Noche " + GameObject.Find("Manager").GetComponent<GameManager>().numeroNoche;
+        textoNoche.text = "Noche " + PlayerPrefs.GetInt("nocheActual");
 
         pantallaNegra = GetComponent<Image>();
         StartCoroutine(transicionCamara(true));
@@ -89,13 +89,14 @@ public class Transicion : MonoBehaviour
     {
         GetComponent<Canvas>().sortingOrder = 2;
         sonidosJuego.reproducirAlarma();
-        for (float i = 0; i <= 1; i += Time.deltaTime)
+        for (float i = 0; i <= 1.1; i += Time.deltaTime)
         {
             // set color with i as alpha
             pantallaNegra.color = new Color(1, 1, 1, i);
             horaFinalTexto.color = new Color(1, 1, 1, i);
             yield return null;
         }
+
         yield return new WaitForSeconds(1.75f);
         sonidosJuego.reproducirVictoria();
         yield return new WaitForSeconds(6);

@@ -5,8 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public int numeroNoche = 1;
+    public int numeroNoche;
 
+    public GameObject transicion;
     public GameObject UI;
     public GameObject Mapa;
     public GameObject botonesMapa;
@@ -23,14 +24,16 @@ public class GameManager : MonoBehaviour
     public float cansancio = 100;
     public float tiempoDescuento = 9.6f;
 
-    public float contadorReset = 0;
-
 
     // Start is called before the first frame update
     void Start()
     {
         puerta = GameObject.Find("Puerta").GetComponent<PuertaController>();
         chapa = GameObject.Find("Chapa").GetComponent<ChapaController>();
+
+        transicion.SetActive(true);
+        cargarPartida();
+        prepararPartida();
 
         StartCoroutine(contarTiempo());
     }
@@ -67,6 +70,7 @@ public class GameManager : MonoBehaviour
         {
             yield return new WaitForSeconds(1);
             tiempo++;
+            actualizarEnemigos();
         }
     }
 
@@ -75,28 +79,25 @@ public class GameManager : MonoBehaviour
         if(tiempo == tiempoFinal)
         {
             lanzarFinal(false);
+            tiempo = 0;
+            guardarPartida();
         }
     }
 
     public void lanzarFinal(bool asesinado)
     {
-        Camara.GetComponent<CamaraController>().juegoContinua = false;
+        desactivarEnemigos(); 
         juegoContinua = false;
+        UI.SetActive(true);
+        Mapa.SetActive(false);
+        botonesMapa.SetActive(false);
         if (asesinado)
         {
-            UI.SetActive(true);
-            Mapa.SetActive(false);
-            botonesMapa.SetActive(false);
-            //finDelJuegoTexto.gameObject.SetActive(true);
             GameObject.Find("Transicion").GetComponent<Transicion>().oscurecerPantallaMuerte();
             StartCoroutine(hacerCambioTitulo());
         }
         else
         {
-            UI.SetActive(true);
-            Mapa.SetActive(false);
-            botonesMapa.SetActive(false);
-            //finDelJuegoTexto.gameObject.SetActive(true);
             GameObject.Find("Transicion").GetComponent<Transicion>().oscurecerPantallaVictoria();
             StartCoroutine(hacerCambioSiguiente());
         }
@@ -112,7 +113,14 @@ public class GameManager : MonoBehaviour
     IEnumerator hacerCambioSiguiente()
     {
         yield return new WaitForSeconds(10);
-        SceneManager.LoadScene("Gracias");
+        if (numeroNoche > 5)
+        {
+            SceneManager.LoadScene("Titulo");
+        }
+        else
+        {
+            SceneManager.LoadScene("Juego");
+        }
     }
 
     void actualizarConsumo()
@@ -150,6 +158,72 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    void guardarPartida()
+    {
+        int mejorNoche = PlayerPrefs.GetInt("mejorNoche");
+        numeroNoche++;
+
+        if(numeroNoche > mejorNoche)
+        {
+            PlayerPrefs.SetInt("mejorNoche", numeroNoche);
+        }
+        PlayerPrefs.SetInt("nocheActual", numeroNoche);
+    }
+
+    void cargarPartida()
+    {
+        numeroNoche = PlayerPrefs.GetInt("nocheActual");
+    }
+
+    void prepararPartida()
+    {
+        switch (numeroNoche)
+        {
+            case 1:
+                listaEnemigos[0].GetComponent<CocoControl>().ponerDificultad(2);
+                break;
+
+            case 2:
+                listaEnemigos[0].GetComponent<CocoControl>().ponerDificultad(5);
+                break;
+
+            case 3:
+                listaEnemigos[0].GetComponent<CocoControl>().ponerDificultad(7);
+                break;
+
+            case 4:
+                listaEnemigos[0].GetComponent<CocoControl>().ponerDificultad(10);
+                break;
+
+            case 5:
+                listaEnemigos[0].GetComponent<CocoControl>().ponerDificultad(13);
+                break;
+        }
+        
+    }
+
+    void desactivarEnemigos()
+    {
+        listaEnemigos[0].GetComponent<CocoControl>().desactivar();
+    }
+
+    void actualizarEnemigos()
+    {
+        switch (tiempo)
+        {
+            case 180:
+                listaEnemigos[0].GetComponent<CocoControl>().aumentarDificultad();
+                break;
+
+            case 270:
+                listaEnemigos[0].GetComponent<CocoControl>().aumentarDificultad();
+                break;
+
+            case 360:
+                listaEnemigos[0].GetComponent<CocoControl>().aumentarDificultad();
+                break;
+        }
+    }
 
 
 
