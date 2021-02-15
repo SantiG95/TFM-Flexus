@@ -309,4 +309,9 @@ public class CocoControl : MonoBehaviour
     {
         dificultad++;
     }
+
+    public void disminuirDificultad()
+    {
+        dificultad--;
+    }
 }

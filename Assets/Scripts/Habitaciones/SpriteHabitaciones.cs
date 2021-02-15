@@ -32,6 +32,14 @@ public class SpriteHabitaciones : MonoBehaviour
             case "Mesas":
                 GameObject.Find("Mesas").GetComponent<SpriteRenderer>().sprite = Mesas[numeroLista];
                 break;
+
+            case "Nubes":
+                GameObject.Find("Nubes").GetComponent<SpriteRenderer>().sprite = Nubes[numeroLista];
+                break;
+
+            case "Piscina":
+                GameObject.Find("Piscina").GetComponent<SpriteRenderer>().sprite = Piscina[numeroLista];
+                break;
         }
     }
 }

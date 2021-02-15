@@ -5,6 +5,7 @@ using UnityEngine.EventSystems;
 
 public class SalaPrincipalScript : MonoBehaviour//, IPointerDownHandler
 {
+    public GameObject patoEnSala;
     private Animator animacionesAtaque;
 
     private GameObject puerta;

@@ -72,16 +72,18 @@
     <Compile Include="Assets\Scripts\CamaraScripts\LimitesCamara.cs" />
     <Compile Include="Assets\Scripts\CamaraScripts\MoverCamaraDerecha.cs" />
     <Compile Include="Assets\Scripts\CamaraScripts\MoverCamaraIzquierda.cs" />
-    <Compile Include="Assets\Scripts\EditorTools.cs" />
     <Compile Include="Assets\Scripts\Elementos\AdvertenciaController.cs" />
     <Compile Include="Assets\Scripts\Elementos\EnergiaIndicador.cs" />
     <Compile Include="Assets\Scripts\Elementos\GameManager.cs" />
     <Compile Include="Assets\Scripts\Elementos\SonidosJuego.cs" />
     <Compile Include="Assets\Scripts\Elementos\Transicion.cs" />
     <Compile Include="Assets\Scripts\ElementosScripts\ChapaController.cs" />
+    <Compile Include="Assets\Scripts\ElementosScripts\PatoEnSalaScript.cs" />
     <Compile Include="Assets\Scripts\ElementosScripts\PuertaController.cs" />
     <Compile Include="Assets\Scripts\Enemigos\CocoControl.cs" />
+    <Compile Include="Assets\Scripts\Enemigos\PatoControl.cs" />
     <Compile Include="Assets\Scripts\Enemigos\terminarJuego.cs" />
+    <Compile Include="Assets\Scripts\EnemigosMenores\ChajahController.cs" />
     <Compile Include="Assets\Scripts\Guardado\DatosGuardado.cs" />
     <Compile Include="Assets\Scripts\Guardado\DatosPartida.cs" />
     <Compile Include="Assets\Scripts\Guardado\SistemaGuardado.cs" />
@@ -89,6 +91,8 @@
     <Compile Include="Assets\Scripts\Habitaciones\ExteriorScript.cs" />
     <Compile Include="Assets\Scripts\Habitaciones\FuenteScript.cs" />
     <Compile Include="Assets\Scripts\Habitaciones\MesasScript.cs" />
+    <Compile Include="Assets\Scripts\Habitaciones\NubesScript.cs" />
+    <Compile Include="Assets\Scripts\Habitaciones\PiscinaScript.cs" />
     <Compile Include="Assets\Scripts\Habitaciones\PresenciaEnemigos.cs" />
     <Compile Include="Assets\Scripts\Habitaciones\SalaPrincipalScript.cs" />
     <Compile Include="Assets\Scripts\Habitaciones\SpriteHabitaciones.cs" />
@@ -101,6 +105,7 @@
     <Compile Include="Assets\Scripts\Titulo\GameManagerTitulo.cs" />
     <Compile Include="Assets\Scripts\Titulo\SonidosMenu.cs" />
     <Compile Include="Assets\Scripts\Titulo\tituloFondo.cs" />
+    <Compile Include="Assets\Scripts\Titulo\Version.cs" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />

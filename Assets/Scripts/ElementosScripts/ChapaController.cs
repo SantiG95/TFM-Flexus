@@ -5,6 +5,7 @@ using UnityEngine;
 public class ChapaController : MonoBehaviour
 {
     public bool puertaAbierta = true;
+    private bool interactuable = true;
 
     private Animator animatorChapa;
     public  bool juegoContinua;
@@ -37,20 +38,33 @@ public class ChapaController : MonoBehaviour
 
     public void cambiarSprite()
     {
-        sonidosChapa.PlayOneShot(chapaCorriendo, 1);
-        if (puertaAbierta)
-        {
-            animatorChapa.SetTrigger("Moviendo");
+        StartCoroutine(cambiarSpriteEnumerador());
+    }
 
-            puertaAbierta = false;
-            animatorChapa.SetBool("Abierto", false);
-        }
-        else
+    IEnumerator cambiarSpriteEnumerador()
+    {
+        if (interactuable)
         {
-            animatorChapa.SetTrigger("Moviendo");
-            animatorChapa.SetBool("Abierto", true);
-            puertaAbierta = true;
+            interactuable = false;
+            sonidosChapa.PlayOneShot(chapaCorriendo, 1);
+            if (puertaAbierta)
+            {
+                animatorChapa.SetTrigger("Moviendo");
+
+                puertaAbierta = false;
+                animatorChapa.SetBool("Abierto", false);
+            }
+            else
+            {
+                animatorChapa.SetTrigger("Moviendo");
+                animatorChapa.SetBool("Abierto", true);
+                puertaAbierta = true;
+            }
+            yield return new WaitForSeconds(0.2f);
+            interactuable = true;
         }
+        
+
     }
 
     public void sonidoChapaGolpeada()

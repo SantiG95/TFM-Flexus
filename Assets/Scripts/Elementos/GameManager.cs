@@ -113,13 +113,13 @@ public class GameManager : MonoBehaviour
     IEnumerator hacerCambioSiguiente()
     {
         yield return new WaitForSeconds(10);
-        if (numeroNoche > 5)
+        if (numeroNoche <= 5)
         {
-            SceneManager.LoadScene("Titulo");
+            SceneManager.LoadScene("Juego");
         }
         else
         {
-            SceneManager.LoadScene("Juego");
+            SceneManager.LoadScene("Gracias");
         }
     }
 
@@ -161,7 +161,10 @@ public class GameManager : MonoBehaviour
     void guardarPartida()
     {
         int mejorNoche = PlayerPrefs.GetInt("mejorNoche");
-        numeroNoche++;
+        if(numeroNoche < 5)
+        {
+            numeroNoche++;
+        }
 
         if(numeroNoche > mejorNoche)
         {
@@ -181,22 +184,27 @@ public class GameManager : MonoBehaviour
         {
             case 1:
                 listaEnemigos[0].GetComponent<CocoControl>().ponerDificultad(2);
+                listaEnemigos[1].GetComponent<PatoControl>().ponerDificultad(0);
                 break;
 
             case 2:
                 listaEnemigos[0].GetComponent<CocoControl>().ponerDificultad(5);
+                listaEnemigos[1].GetComponent<PatoControl>().ponerDificultad(2);
                 break;
 
             case 3:
                 listaEnemigos[0].GetComponent<CocoControl>().ponerDificultad(7);
+                listaEnemigos[1].GetComponent<PatoControl>().ponerDificultad(10);
                 break;
 
             case 4:
                 listaEnemigos[0].GetComponent<CocoControl>().ponerDificultad(10);
+                listaEnemigos[1].GetComponent<PatoControl>().ponerDificultad(7);
                 break;
 
             case 5:
                 listaEnemigos[0].GetComponent<CocoControl>().ponerDificultad(13);
+                listaEnemigos[1].GetComponent<PatoControl>().ponerDificultad(12);
                 break;
         }
         
@@ -205,6 +213,7 @@ public class GameManager : MonoBehaviour
     void desactivarEnemigos()
     {
         listaEnemigos[0].GetComponent<CocoControl>().desactivar();
+        listaEnemigos[1].GetComponent<PatoControl>().desactivar();
     }
 
     void actualizarEnemigos()
@@ -217,10 +226,12 @@ public class GameManager : MonoBehaviour
 
             case 270:
                 listaEnemigos[0].GetComponent<CocoControl>().aumentarDificultad();
+                listaEnemigos[1].GetComponent<PatoControl>().aumentarDificultad();
                 break;
 
             case 360:
                 listaEnemigos[0].GetComponent<CocoControl>().aumentarDificultad();
+                listaEnemigos[1].GetComponent<PatoControl>().aumentarDificultad();
                 break;
         }
     }

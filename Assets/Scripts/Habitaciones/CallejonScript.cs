@@ -5,7 +5,7 @@ using UnityEngine;
 public class CallejonScript : MonoBehaviour
 {
     private CocoControl coco;
-    public GameObject pato;
+    public PatoControl pato;
     public GameObject sinNombre;
 
     private SpriteHabitaciones cambiaSprite;
@@ -15,6 +15,7 @@ public class CallejonScript : MonoBehaviour
     void Start()
     {
         coco = GameObject.Find("Coco").GetComponent<CocoControl>();
+        pato = GameObject.Find("Pato").GetComponent<PatoControl>();
 
         cambiaSprite = GameObject.Find("Lugares").GetComponent<SpriteHabitaciones>();
         presenciaEnemigos = GetComponent<PresenciaEnemigos>();
@@ -28,7 +29,34 @@ public class CallejonScript : MonoBehaviour
 
     void detectarEnemigos()
     {
-        if (presenciaEnemigos.cocoPresente/* && patoPresente && sinNombrePresente*/)
+        if (presenciaEnemigos.cocoPresente && presenciaEnemigos.patoPresente)
+        {
+            switch (coco.estado)
+            {
+                case 0:
+                    if (pato.estado == 0)
+                    {
+                        cambiaSprite.cambiarSprite("Callejon", 5);
+                    }
+                    else
+                    {
+                        cambiaSprite.cambiarSprite("Callejon", 7);
+                    }
+                    break;
+
+                case 1:
+                    if (pato.estado == 0)
+                    {
+                        cambiaSprite.cambiarSprite("Callejon", 6);
+                    }
+                    else
+                    {
+                        cambiaSprite.cambiarSprite("Callejon", 8);
+                    }
+                    break;
+            }
+        }
+        else if (presenciaEnemigos.cocoPresente)
         {
             switch (coco.estado)
             {
@@ -41,6 +69,19 @@ public class CallejonScript : MonoBehaviour
                     break;
             }
 
+        }
+        else if (presenciaEnemigos.patoPresente)
+        {
+            switch (pato.estado)
+            {
+                case 0:
+                    cambiaSprite.cambiarSprite("Callejon", 3);
+                    break;
+
+                case 1:
+                    cambiaSprite.cambiarSprite("Callejon", 4);
+                    break;
+            }
         }
         else
         {

@@ -11,6 +11,12 @@ public class GameManagerTitulo : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if(!PlayerPrefs.HasKey("Version") || PlayerPrefs.GetString("Version") != Application.version)
+        {
+            PlayerPrefs.DeleteAll();
+        }
+
+
         if (!PlayerPrefs.HasKey("mejorNoche"))
         {
             PlayerPrefs.SetInt("mejorNoche", 1);
