@@ -14,5 +14,5 @@ Cada noche dura 540 segundos (9 minutos)
 + Pato
 + Sin Nombre (En trabajo)
 
-# Enemigos
+# Enemigos menores
 Chajah
