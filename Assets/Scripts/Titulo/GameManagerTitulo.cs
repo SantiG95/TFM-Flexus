@@ -27,10 +27,4 @@ public class GameManagerTitulo : MonoBehaviour
             mejorNocheTexto.text = "Noche " + mejorNocheSuperada;
         }
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

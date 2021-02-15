@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public GameObject Mapa;
     public GameObject botonesMapa;
     public List<GameObject> listaEnemigos;
+    public ChajahController chajah;
     public GameObject Camara;
     public PuertaController puerta;
     public ChapaController chapa;
@@ -30,10 +31,12 @@ public class GameManager : MonoBehaviour
     {
         puerta = GameObject.Find("Puerta").GetComponent<PuertaController>();
         chapa = GameObject.Find("Chapa").GetComponent<ChapaController>();
+        chajah = GameObject.Find("Chajah").GetComponent<ChajahController>();
 
         transicion.SetActive(true);
         cargarPartida();
         prepararPartida();
+        chajah.establecerNoche(numeroNoche);
 
         StartCoroutine(contarTiempo());
     }
@@ -91,6 +94,7 @@ public class GameManager : MonoBehaviour
         UI.SetActive(true);
         Mapa.SetActive(false);
         botonesMapa.SetActive(false);
+        chajah.detener();
         if (asesinado)
         {
             GameObject.Find("Transicion").GetComponent<Transicion>().oscurecerPantallaMuerte();

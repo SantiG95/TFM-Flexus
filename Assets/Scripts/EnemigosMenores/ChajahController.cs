@@ -9,7 +9,6 @@ public class ChajahController : MonoBehaviour
     public bool enojado = false;
     public float contador;
 
-    private BoxCollider2D boxCollider;
     private AudioSource sonidoChaja;
     private Animator animator;
 
@@ -22,7 +21,6 @@ public class ChajahController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        boxCollider = GetComponent<BoxCollider2D>();
         animator = GetComponent<Animator>();
         sonidoChaja = GetComponent<AudioSource>();
 
@@ -105,5 +103,15 @@ public class ChajahController : MonoBehaviour
             coco.aumentarDificultad();
             pato.aumentarDificultad();
         }
+    }
+
+    public void establecerNoche(int nNoche)
+    {
+        numeroNoche = nNoche;
+    }
+
+    public void detener()
+    {
+        sonidoChaja.Stop();
     }
 }
