@@ -1,4 +1,4 @@
-# Proyecto-Skitty
+# TFM Flexus
  Proyecto personal de practica usando assets incompletos de SkittyBerry
 
 # Concepto
@@ -11,5 +11,8 @@ Cada noche dura 540 segundos (9 minutos)
 
 # Enemigos
 + Coco
-+ Pato (En trabajo)
++ Pato
 + Sin Nombre (En trabajo)
+
+# Enemigos
+Chajah
