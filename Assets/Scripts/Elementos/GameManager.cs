@@ -117,7 +117,7 @@ public class GameManager : MonoBehaviour
     IEnumerator hacerCambioSiguiente()
     {
         yield return new WaitForSeconds(10);
-        if (numeroNoche < 5)
+        if (numeroNoche < 6)
         {
             SceneManager.LoadScene("Juego");
         }
@@ -165,7 +165,7 @@ public class GameManager : MonoBehaviour
     void guardarPartida()
     {
         int mejorNoche = PlayerPrefs.GetInt("mejorNoche");
-        if(numeroNoche < 5)
+        if(numeroNoche < 6)
         {
             numeroNoche++;
         }

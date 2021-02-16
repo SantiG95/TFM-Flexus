@@ -14,8 +14,8 @@ public class GameManagerTitulo : MonoBehaviour
         if(!PlayerPrefs.HasKey("Version") || PlayerPrefs.GetString("Version") != Application.version)
         {
             PlayerPrefs.DeleteAll();
+            PlayerPrefs.SetString("Version", Application.version);
         }
-
 
         if (!PlayerPrefs.HasKey("mejorNoche"))
         {
@@ -24,7 +24,14 @@ public class GameManagerTitulo : MonoBehaviour
         mejorNocheSuperada = PlayerPrefs.GetInt("mejorNoche");
         if(mejorNocheSuperada != 1)
         {
-            mejorNocheTexto.text = "Noche " + mejorNocheSuperada;
+            if(mejorNocheSuperada == 6)
+            {
+                mejorNocheTexto.text = "Noche " + 5;
+            }
+            else
+            {
+                mejorNocheTexto.text = "Noche " + mejorNocheSuperada;
+            }
         }
     }
 }
