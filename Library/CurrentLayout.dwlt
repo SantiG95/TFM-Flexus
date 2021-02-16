@@ -161,8 +161,8 @@ MonoBehaviour:
     y: 0
     width: 1023
     height: 549
-  m_MinSize: {x: 202, y: 224}
-  m_MaxSize: {x: 4002, y: 4024}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -241,8 +241,8 @@ MonoBehaviour:
     y: 0
     width: 484
     height: 539
-  m_MinSize: {x: 204, y: 224}
-  m_MaxSize: {x: 4004, y: 4024}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 18}
@@ -293,8 +293,8 @@ MonoBehaviour:
     y: 0
     width: 413
     height: 947
-  m_MinSize: {x: 277, y: 74}
-  m_MaxSize: {x: 4002, y: 4024}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 20}
   m_Panes:
   - {fileID: 20}
@@ -643,7 +643,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 0af9ffff22f9ffff62fafffff2fafffffafaffff04fbffffccfbffff
+      m_ExpandedIDs: def7fffff6f7ffff32f9ffff38f9ffff4ef9ffff54f9ffff46fbffffc2fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -705,20 +705,20 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts/Titulo
+    - Assets/Escenas
   m_ViewMode: 1
   m_StartGridSize: 96
   m_LastFolders:
-  - Assets/Scripts/Titulo
+  - Assets/Escenas
   m_LastFoldersGridSize: 96
   m_LastProjectPath: C:\Users\santi\Documents\Proyectos Unity\Proyecto Skitty
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 9e2a0000
-    m_LastClickedID: 10910
-    m_ExpandedIDs: 000000000a270000b2280000722900003e2c0000be2d0000c02d0000c22d0000c42d000000ca9a3b
+    scrollPos: {x: 0, y: 17}
+    m_SelectedIDs: ca2b0000
+    m_LastClickedID: 11210
+    m_ExpandedIDs: 0000000002270000aa2800006a290000362c0000ba2d0000bc2d0000be2d0000c02d000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -746,7 +746,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000000a270000b2280000722900003e2c0000be2d0000c02d0000c22d0000c42d0000
+    m_ExpandedIDs: 0000000002270000aa2800006a290000362c0000ba2d0000bc2d0000be2d0000c02d0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -798,7 +798,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 170}
+    m_ScrollPosition: {x: 0, y: 0}
     m_GridSize: 96
   m_DirectoriesAreaWidth: 169
 --- !u!114 &20

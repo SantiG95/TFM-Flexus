@@ -81,9 +81,9 @@ public class GameManager : MonoBehaviour
     {
         if(tiempo == tiempoFinal)
         {
-            lanzarFinal(false);
             tiempo = 0;
             guardarPartida();
+            lanzarFinal(false);
         }
     }
 
@@ -117,7 +117,7 @@ public class GameManager : MonoBehaviour
     IEnumerator hacerCambioSiguiente()
     {
         yield return new WaitForSeconds(10);
-        if (numeroNoche <= 5)
+        if (numeroNoche < 5)
         {
             SceneManager.LoadScene("Juego");
         }
