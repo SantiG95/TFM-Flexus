@@ -12,6 +12,7 @@ public class PatoControl : MonoBehaviour
     public int dificultadSala;
     public int dificultadNoche;
     public float contador = 0;
+    public bool seMovio = false;
     public float contadorAtaque = 0;
     public float contadorLlamado = 0;
     public bool estuvoLlamando = false;
@@ -108,8 +109,9 @@ public class PatoControl : MonoBehaviour
     {
         if (contador > 5)
         {
-            if (darUnPaso())
+            if (darUnPaso() && !seMovio)
             {
+                seMovio = true;
                 switch (habitacionActual.name)
                 {
                     case "Fuente":
@@ -189,7 +191,6 @@ public class PatoControl : MonoBehaviour
                         }
                         else
                         {
-                            //sonidoPatoTriste();
                             cambioHabitacion(0);
                         }
                         break;
@@ -197,6 +198,10 @@ public class PatoControl : MonoBehaviour
                 }
             }
             contador = 0;
+        }
+        else
+        {
+            seMovio = false;
         }
     }
 

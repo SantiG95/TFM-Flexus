@@ -47,7 +47,7 @@ public class ChajahController : MonoBehaviour
     {
         if (presente && !enojado)
         {
-            if(Random.Range(0,10) < 2)
+            if(Random.Range(0,10) < 1)
             {
                 enojarse();
             }
