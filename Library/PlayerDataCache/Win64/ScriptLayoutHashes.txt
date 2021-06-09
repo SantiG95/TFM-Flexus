@@ -1,6 +1,6 @@
 Win64
 PlayerPath?
-C:/Users/santi/Desktop/ProyectoSkittyPrueba/TFM Flexus.exe
+C:/Users/santi/Desktop/TFM Flexus/TFM Flexus.exe
 SceneListBegin?
 Assets/Escenas/Advertencia.unity
 Assets/Escenas/Titulo.unity
@@ -141,7 +141,7 @@ a730cd42e5be873a7caf13505625cd83 Assembly-CSharp.dll:.CamaraController
 5daae957e46dc29048e748fe60667c67 Assembly-CSharp.dll:.SpriteHabitaciones
 4fd8bf02e3089425d3502e26c44ba31a Unity.TextMeshPro.dll:TMPro.TextContainer
 8e5fe96563baf582d41a56c71d91c5ab Assembly-CSharp.dll:.EnergiaIndicador
-6c4ebdad5176f96fb407eb11a9abb076 Assembly-CSharp.dll:.PatoControl
+adbfce1460e71444a871c78d5e07db05 Assembly-CSharp.dll:.PatoControl
 ee17586da761ea852dfa63641f1ec39b Assembly-CSharp.dll:.CocoControl
 dd4c1735a6d84c60069b1091ec6c4c2f Assembly-CSharp.dll:.SonidosJuego
 54474e20d0d247d4cbafb2f405e32c37 Assembly-CSharp.dll:.BordeIzquierdoScript
