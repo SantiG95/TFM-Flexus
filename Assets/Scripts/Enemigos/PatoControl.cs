@@ -40,11 +40,6 @@ public class PatoControl : MonoBehaviour
     {
         if (juegoActivo)
         {
-            if (Input.GetKeyDown(KeyCode.A))
-            {
-                destinoActual = GameObject.Find("Sala Principal");
-                cambioHabitacion(0);
-            }
             verHabitacionMiraCamara();
             cuentaTiempo();
             prepararAtaque();
